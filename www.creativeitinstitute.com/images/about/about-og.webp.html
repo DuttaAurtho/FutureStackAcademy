@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>404 — Futurestackacademy</title>
+    <link rel="icon" type="image/svg+xml" href="../../images/fsa/logo-mark.svg">
+    <link rel="apple-touch-icon" href="../../images/fsa/logo-mark.svg">
+    
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@700;800&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand: #e02234;
+            --brand-hover: #c31b2c;
+            --green: #00a862;
+            --ink: #14141a;
+            --body: #4a4a57;
+            --muted: #6a6a78;
+            --silver: #9c9caa;
+            --line: #ececef;
+            --line-muted: #dededf;
+            --surface: #fafafb;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+        html, body { margin: 0; padding: 0; }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: var(--surface);
+            color: var(--ink);
+            font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin-inline: auto;
+            padding-inline: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .site-header { background: #fff; border-bottom: 1px solid var(--line); }
+        .site-header .container { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 76px; }
+        .site-header .container.is-centered { justify-content: center; }
+        .site-header img { height: 36px; width: auto; display: block; }
+
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem;
+            border-radius: 12px; padding: 0.8rem 1.2rem; font-size: 0.93rem; font-weight: 700;
+            text-decoration: none; white-space: nowrap;
+            transition: background-color .2s, border-color .2s, transform .2s, box-shadow .2s;
+        }
+        .btn svg { width: 1.05em; height: 1.05em; }
+        .btn-primary { background: var(--brand); color: #fff; box-shadow: 0 10px 22px -12px rgba(224, 34, 52, .9); }
+        .btn-primary:hover { background: var(--brand-hover); transform: translateY(-2px); }
+        .btn-outline { background: #fff; border: 1.5px solid var(--line-muted); color: var(--ink); }
+        .btn-outline:hover { border-color: var(--ink); transform: translateY(-2px); }
+
+        main { position: relative; flex: 1; display: flex; align-items: center; overflow: hidden; background: var(--ink); padding-block: clamp(3.5rem, 8vw, 6rem); }
+        .bg-dots { position: absolute; inset: 0; background-image: radial-gradient(#2a2a34 1px, transparent 1px); background-size: 30px 30px; pointer-events: none; }
+        .bg-glow { position: absolute; border-radius: 9999px; pointer-events: none; }
+        .bg-glow.is-red { top: -220px; right: -140px; width: 620px; height: 620px; background-image: radial-gradient(circle, rgba(224, 34, 52, .4), transparent 62%); }
+        .bg-glow.is-green { bottom: -260px; left: -160px; width: 560px; height: 560px; background-image: radial-gradient(circle, rgba(0, 168, 98, .28), transparent 62%); }
+
+        .error-body { display: grid; gap: 2rem; align-items: center; }
+        @media (min-width: 900px) { .error-body { grid-template-columns: minmax(0, 1fr) auto; } }
+
+        .breadcrumb { display: flex; flex-wrap: wrap; gap: 9px; margin: 0 0 clamp(28px, 4vw, 44px); padding: 0; list-style: none; font-size: 13px; font-weight: 600; }
+        .breadcrumb a { color: var(--silver); text-decoration: none; }
+        .breadcrumb a:hover { color: #fff; }
+        .breadcrumb .sep { color: var(--body); }
+        .breadcrumb .current { color: #fff; }
+
+        .eyebrow { display: flex; align-items: center; gap: 9px; margin-bottom: 1rem; }
+        .eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--brand); }
+        .eyebrow span { font-size: 12.5px; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: #ff8a95; }
+
+        .error-body h1 {
+            margin: 0; font-family: "Manrope", ui-sans-serif, system-ui, sans-serif;
+            font-size: clamp(32px, 4.4vw, 52px); font-weight: 800; line-height: 1.08; letter-spacing: -0.035em; color: #fff; text-wrap: balance;
+        }
+        .error-message { display: block; margin-top: 1.25rem; font-size: clamp(15.5px, 1.2vw, 18px); line-height: 1.62; color: #a5a5b4; text-wrap: pretty; }
+        .error-actions { margin-top: 2.25rem; display: flex; gap: .75rem; flex-wrap: wrap; }
+        .btn-ghost { background: rgba(255, 255, 255, .06); border: 1.5px solid rgba(255, 255, 255, .16); color: #fff; }
+        .btn-ghost:hover { border-color: #fff; transform: translateY(-2px); }
+
+        .error-code {
+            display: flex; align-items: center; gap: 1.25rem;
+            font-family: "Manrope", ui-sans-serif, system-ui, sans-serif;
+            font-size: clamp(5rem, 16vw, 11rem); font-weight: 800; line-height: .9; letter-spacing: -0.05em; color: #fff;
+        }
+        .error-code::after { content: "."; color: var(--brand); margin-left: -1.25rem; }
+        .error-badge {
+            display: grid; place-items: center; width: 64px; height: 64px; flex-shrink: 0; border-radius: 18px;
+            color: #fff; background: var(--brand); box-shadow: 0 0 0 9px rgba(224, 34, 52, .25);
+        }
+        .error-badge svg { width: 28px; height: 28px; }
+        @media (min-width: 900px) { .error-code { flex-direction: column; align-items: flex-end; } .error-code::after { display: none; } }
+
+        .site-footer { border-top: 1px solid var(--line); background: #fff; padding-block: 1.5rem; font-size: .875rem; font-weight: 500; color: var(--muted); }
+
+        @media (prefers-reduced-motion: no-preference) {
+            .error-body > * { animation: rise .6s cubic-bezier(.22, 1, .36, 1) both; }
+            .error-body > *:nth-child(2) { animation-delay: .12s; }
+            @keyframes rise { from { opacity: 0; transform: translateY(18px); } }
+        }
+    </style>
+</head>
+
+<body>
+    
+    
+    <header class="site-header">
+        <div class="container">
+            <a href="https://www.creativeitinstitute.com" aria-label="Futurestackacademy">
+                <img src="../../images/fsa/logo-dark.svg" alt="Futurestackacademy">
+            </a>
+                            <a href="https://www.creativeitinstitute.com/our-courses" class="btn btn-primary">Browse courses</a>
+                    </div>
+    </header>
+
+    <main>
+        <div aria-hidden="true" class="bg-dots"></div>
+        <div aria-hidden="true" class="bg-glow is-red"></div>
+        <div aria-hidden="true" class="bg-glow is-green"></div>
+
+        <div class="container">
+            <ol class="breadcrumb" aria-label="Breadcrumb">
+                <li><a href="https://www.creativeitinstitute.com">Home</a></li>
+                <li class="sep" aria-hidden="true">/</li>
+                <li class="current" aria-current="page">Error 404</li>
+            </ol>
+
+            <div class="error-body">
+                <div>
+                    <div class="eyebrow"><span>Error 404</span></div>
+                    <h1>Page not found</h1>
+                    <span class="error-message">The page you&#039;re looking for has been moved, renamed or never existed.</span>
+                                            <div class="error-actions">
+                            <a class="btn btn-primary" href="https://www.creativeitinstitute.com">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M3 11.5 12 4l9 7.5" />
+                                    <path d="M5 10v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-9" />
+                                </svg>
+                                Back to home
+                            </a>
+                            <a class="btn btn-ghost" href="https://www.creativeitinstitute.com/contact-us">Contact us</a>
+                        </div>
+                                    </div>
+
+                <div class="error-code" aria-hidden="true">
+                    <span class="error-badge">    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round" aria-hidden="true">
+        <circle cx="10.5" cy="10.5" r="6.5" />
+        <path d="m21 21-5.2-5.2" />
+    </svg>
+</span>
+                    <span>404</span>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            &copy; 2026 Futurestackacademy. All rights reserved.
+        </div>
+    </footer>
+</body>
+
+</html>

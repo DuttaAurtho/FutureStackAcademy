@@ -1,0 +1,12 @@
+# Session cookies saved by the website downloader — never publish these
+cookies.txt
+
+# Website downloader leftovers (not part of the site)
+hts-cache/
+hts-log.txt
+
+# Local tooling
+.claude/
+node_modules/
+.DS_Store
+Thumbs.db

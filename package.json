@@ -1,0 +1,9 @@
+{
+  "name": "futurestackacademy",
+  "version": "1.0.0",
+  "description": "Local server for Futurestackacademy static website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

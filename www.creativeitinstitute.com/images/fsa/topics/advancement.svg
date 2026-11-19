@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4c0519"/><stop offset="1" stop-color="#f43f5e"/></linearGradient>
+<pattern id="d" width="28" height="28" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="#fff" opacity=".14"/></pattern></defs>
+<rect width="800" height="450" fill="url(#g)"/><rect width="800" height="450" fill="url(#d)"/>
+<circle cx="640" cy="225" r="185" fill="#fff" opacity=".07"/>
+<g fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"><path d="M520 320h260"/><rect x="540" y="260" width="45" height="60" rx="6"/><rect x="617" y="215" width="45" height="105" rx="6"/><rect x="694" y="160" width="45" height="160" rx="6"/><path d="M540 210l70-60 45 30 75-60M700 120h30v30"/></g>
+<text x="56" y="92" font-family="Segoe UI,Arial,sans-serif" font-size="20" font-weight="700" letter-spacing="4" fill="#fff" opacity=".8">FUTURESTACKACADEMY</text>
+<rect x="56" y="300" width="56" height="5" rx="2.5" fill="#fff"/>
+<text x="56" y="360" font-family="Segoe UI,Arial,sans-serif" font-size="34" font-weight="800" fill="#fff">CAREER GROWTH</text>
+</svg>

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+<defs>
+<linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eceef3"/><stop offset="1" stop-color="#dcdfe7"/></linearGradient>
+<pattern id="d" width="24" height="24" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.4" fill="#14141a" opacity=".06"/></pattern>
+</defs>
+<rect width="800" height="450" fill="url(#g)"/>
+<rect width="800" height="450" fill="url(#d)"/>
+<g fill="#b9bdc9">
+<circle cx="400" cy="170" r="70"/>
+<path d="M260 400c0-80 63-140 140-140s140 60 140 140z"/>
+</g>
+<rect x="300" y="404" width="200" height="30" rx="15" fill="#fff" opacity=".85"/>
+<text x="400" y="424" text-anchor="middle" font-family="Segoe UI,Arial,sans-serif" font-size="14" font-weight="700" letter-spacing="2" fill="#6b6f7c">STUDENT PHOTO</text>
+</svg>
