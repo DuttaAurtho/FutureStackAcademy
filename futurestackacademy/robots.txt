@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /signals/
+Disallow: /cdn-cgi/
+Disallow: /_/
+
+Sitemap: https://futurestackacademy.com/sitemap.xml
