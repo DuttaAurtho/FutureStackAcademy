@@ -49,7 +49,7 @@ function startServer(port) {
 
             // Redirect root directly to main site
             if (pathname === '/') {
-                res.writeHead(302, { 'Location': '/www.creativeitinstitute.com/' });
+                res.writeHead(302, { 'Location': '/futurestackacademy/' });
                 res.end();
                 return;
             }
