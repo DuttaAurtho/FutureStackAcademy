@@ -19,6 +19,26 @@
       "source": "/feedback",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/news.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/news",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/news/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/news:id([0-9a-f]{4}).html",
+      "destination": "/",
+      "permanent": true
     }
   ]
 }
