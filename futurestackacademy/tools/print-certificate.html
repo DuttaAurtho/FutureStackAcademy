@@ -32,7 +32,7 @@
 
 <div class="toolbar">
   <strong>Certificate print tool</strong>
-  <form id="load"><input id="cid" placeholder="FSA-2026-0001" aria-label="Certificate ID"><button type="submit">Load</button></form>
+  <form id="load"><input id="cid" placeholder="FSA-2018-0001" aria-label="Certificate ID"><button type="submit">Load</button></form>
   <button type="button" onclick="window.print()">Print / Save as PDF</button>
   <span style="opacity:.75">In the print dialog choose A4, Landscape, Margins: None, and tick "Background graphics".</span>
 </div>
@@ -142,7 +142,7 @@
   function load(id) {
     id = String(id || '').trim().toUpperCase();
     document.getElementById('cid').value = id;
-    if (!RE.test(id)) { say('Enter a certificate ID like FSA-2026-0001.', 'warn'); return; }
+    if (!RE.test(id)) { say('Enter a certificate ID like FSA-2018-0001.', 'warn'); return; }
     fetch('../certs/' + id + '.json', { cache: 'no-store' })
       .then(function (r) { if (!r.ok) throw new Error(r.status === 404 ? 'No file certs/' + id + '.json' : 'HTTP ' + r.status); return r.json(); })
       .then(function (c) {
@@ -160,7 +160,7 @@
 
   document.getElementById('load').addEventListener('submit', function (e) { e.preventDefault(); load(document.getElementById('cid').value); });
   var q = new URLSearchParams(location.search).get('id');
-  if (q) load(q); else say('Add ?id=FSA-2026-0001 to the address, or type an ID above.', 'warn');
+  if (q) load(q); else say('Add ?id=FSA-2018-0001 to the address, or type an ID above.', 'warn');
 })();
 </script>
 </body>
