@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<title>Print Certificate</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&amp;family=Inter+Tight:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<style>
+  body{margin:0;font-family:'Inter Tight',system-ui,sans-serif;background:#e5e9f0}
+  .toolbar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:14px 20px;background:#0B1626;color:#fff;font-size:14px}
+  .toolbar button{border:0;border-radius:10px;background:#E8772E;color:#fff;font:700 14px 'Inter Tight',sans-serif;padding:10px 18px;cursor:pointer}
+  .toolbar form{display:flex;gap:8px}
+  .toolbar input{border:0;border-radius:10px;padding:9px 12px;font:600 14px 'Inter Tight',sans-serif;width:150px;text-transform:uppercase}
+  .msg{padding:10px 20px;font-weight:700}
+  .msg.err{background:#FEE4E2;color:#B42318}
+  .msg.warn{background:#FEF3C7;color:#92400E}
+  .stage{padding:24px;overflow:auto}
+  #cert{margin:0 auto;box-shadow:0 20px 50px -20px rgba(11,22,38,.45)}
+  @page{size:A4 landscape;margin:0}
+  @media print{
+    html,body{background:#fff;width:297mm;height:210mm;overflow:hidden}
+    .toolbar,.msg{display:none!important}
+    .stage{padding:0;overflow:hidden;height:210mm}
+    #cert{margin:0;box-shadow:none}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <strong>Certificate print tool</strong>
+  <form id="load"><input id="cid" placeholder="FSA-2026-0001" aria-label="Certificate ID"><button type="submit">Load</button></form>
+  <button type="button" onclick="window.print()">Print / Save as PDF</button>
+  <span style="opacity:.75">In the print dialog choose A4, Landscape, Margins: None, and tick "Background graphics".</span>
+</div>
+<div id="msg"></div>
+
+<div class="stage">
+<div id="cert" style="width: 1123px; height: 794px; box-sizing: border-box; background: #FFFFFF; position: relative; overflow: hidden; font-family: 'Inter Tight', system-ui, sans-serif; color: #1B2E4B">
+
+<div aria-hidden="true" style="position: absolute; left: 0; top: 0; width: 1123px; height: 14px; background: #1B2E4B"></div>
+<div aria-hidden="true" style="position: absolute; left: 0; top: 14px; width: 1123px; height: 4px; background: #E8772E"></div>
+<div aria-hidden="true" style="position: absolute; left: 36px; top: 46px; right: 36px; bottom: 36px; border: 1px solid #1B2E4B"></div>
+<div aria-hidden="true" style="position: absolute; left: 44px; top: 54px; right: 44px; bottom: 44px; border: 1px solid #C9D3E0"></div>
+<div aria-hidden="true" style="position: absolute; left: 30px; top: 40px; width: 28px; height: 28px; border-top: 4px solid #E8772E; border-left: 4px solid #E8772E"></div>
+<div aria-hidden="true" style="position: absolute; right: 30px; top: 40px; width: 28px; height: 28px; border-top: 4px solid #E8772E; border-right: 4px solid #E8772E"></div>
+<div aria-hidden="true" style="position: absolute; left: 30px; bottom: 30px; width: 28px; height: 28px; border-bottom: 4px solid #E8772E; border-left: 4px solid #E8772E"></div>
+<div aria-hidden="true" style="position: absolute; right: 30px; bottom: 30px; width: 28px; height: 28px; border-bottom: 4px solid #E8772E; border-right: 4px solid #E8772E"></div>
+
+<div style="position: absolute; left: 80px; right: 80px; top: 74px; display: flex; flex-direction: column; align-items: center; text-align: center">
+
+<div style="display: flex; align-items: center; gap: 10px">
+<svg aria-hidden="true" width="44" height="44" viewBox="0 0 24 24" fill="#1B2E4B" stroke="#1B2E4B" stroke-width="1" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5" fill="none" stroke-width="1.6"></path><path d="M20 10.5v5" fill="none" stroke="#E8772E" stroke-width="1.6" stroke-linecap="round"></path></svg>
+<span style="font-size: 26px; font-weight: 700; letter-spacing: -0.02em">Futurestack<span style="color: #E8772E">academy</span></span>
+</div>
+<span style="margin-top: 4px; font-size: 12px; font-weight: 600; letter-spacing: 0.24em; color: #64748B">IT TRAINING INSTITUTE · DHAKA, BANGLADESH</span>
+
+<span style="margin-top: 30px; font-size: 15px; font-weight: 700; letter-spacing: 0.42em; color: #E8772E">CERTIFICATE OF COMPLETION</span>
+<span style="margin-top: 22px; font-family: 'Instrument Serif', serif; font-style: italic; font-size: 22px; color: #475569">This is to certify that</span>
+<span data-f="name" data-max="900" style="margin-top: 8px; font-family: 'Instrument Serif', serif; font-size: 58px; line-height: 1.05; color: #1B2E4B; white-space: nowrap">[Student Full Name]</span>
+<div aria-hidden="true" style="width: 460px; height: 1px; background: #1B2E4B; margin-top: 8px"></div>
+<span style="margin-top: 16px; font-size: 16px; color: #475569">has successfully completed the course</span>
+<span data-f="course" data-max="900" style="margin-top: 8px; font-size: 26px; font-weight: 700; letter-spacing: -0.01em; color: #1B2E4B; white-space: nowrap">[Course / Diploma Name]</span>
+<span style="margin-top: 12px; font-size: 14px; line-height: 1.6; color: #475569; max-width: 760px">Department: <span data-f="department">[Department]</span> · Duration: <span data-f="duration">[X months / XX hours]</span> · Mode: <span data-f="mode">On campus</span><br>Batch: <span data-f="batch">[Batch No.]</span> · From <span data-f="start">[DD Month YYYY]</span> to <span data-f="end">[DD Month YYYY]</span> · Result: <span data-f="result">[Grade]</span></span>
+</div>
+
+<div style="position: absolute; left: 96px; right: 96px; top: 552px; display: flex; justify-content: space-between; align-items: flex-end">
+<div style="width: 230px; display: flex; flex-direction: column; align-items: center; gap: 4px">
+<div style="height: 44px"></div>
+<div aria-hidden="true" style="width: 230px; height: 1px; background: #1B2E4B"></div>
+<span style="font-size: 14px; font-weight: 700">[Name]</span>
+<span style="font-size: 12px; color: #64748B">Director, Futurestack Academy</span>
+</div>
+
+<svg role="img" aria-label="Official seal" width="130" height="130" viewBox="0 0 130 130">
+<circle cx="65" cy="65" r="62" fill="none" stroke="#1B2E4B" stroke-width="2"></circle>
+<circle cx="65" cy="65" r="50" fill="none" stroke="#1B2E4B" stroke-width="1"></circle>
+<defs><path id="sealArc" d="M65,65 m-56,0 a56,56 0 1,1 112,0 a56,56 0 1,1 -112,0"></path></defs>
+<text fill="#1B2E4B" font-size="9.5" font-weight="700" letter-spacing="2.4" font-family="Inter Tight, sans-serif"><textPath href="#sealArc">FUTURESTACK ACADEMY • UTTARA, DHAKA •</textPath></text>
+<circle cx="65" cy="65" r="34" fill="#1B2E4B"></circle>
+<path d="M85 63 65 53 45 63l20 10 20-10z" fill="#FFFFFF"></path>
+<path d="M53 67v8c6 5 18 5 24 0v-8" fill="none" stroke="#FFFFFF" stroke-width="2"></path>
+<path d="M82 64v9" stroke="#E8772E" stroke-width="2.4" stroke-linecap="round"></path>
+</svg>
+
+<div style="width: 230px; display: flex; flex-direction: column; align-items: center; gap: 4px">
+<div style="height: 44px"></div>
+<div aria-hidden="true" style="width: 230px; height: 1px; background: #1B2E4B"></div>
+<span style="font-size: 14px; font-weight: 700">[Name]</span>
+<span style="font-size: 12px; color: #64748B">Course Instructor / Mentor</span>
+</div>
+</div>
+
+<div style="position: absolute; left: 64px; right: 64px; bottom: 58px; display: flex; justify-content: space-between; align-items: flex-end; gap: 20px">
+<div style="display: flex; flex-direction: column; gap: 3px; font-size: 12px; color: #475569; white-space: nowrap">
+<span><b style="color: #1B2E4B">Certificate ID:</b> <span data-f="id">FSA-[YYYY]-[XXXX]</span></span>
+<span><b style="color: #1B2E4B">Issue date:</b> <span data-f="issued">[DD Month YYYY]</span></span>
+</div>
+<span style="font-size: 12px; color: #64748B; text-align: center">Road 13, Sector 10, Uttara, Dhaka 1230, Bangladesh · <span style="white-space: nowrap">info@futurestackacademy.com</span> · <span style="white-space: nowrap">+880 1644-099435</span></span>
+<div style="display: flex; align-items: center; gap: 10px">
+<div style="display: flex; flex-direction: column; align-items: flex-end; gap: 2px; font-size: 12px; color: #475569"><span>Verify this certificate</span><b style="color: #1B2E4B">futurestackacademy.com/verify</b></div>
+<div id="qr" role="img" aria-label="QR code placeholder" style="width: 64px; height: 64px; border: 1px dashed #1B2E4B; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #1B2E4B; background: #fff">QR</div>
+</div>
+</div>
+
+</div>
+</div>
+
+<script>
+(function () {
+  var RE = /^FSA-\d{4}-\d{4}$/;
+  var VERIFY = 'https://www.futurestackacademy.com/verify.html?id=';
+  var msg = document.getElementById('msg');
+  function say(text, cls) { msg.className = 'msg ' + (cls || ''); msg.textContent = text; }
+
+  // Shrink a single-line field until it fits its max width.
+  function fit(el) {
+    var max = +el.dataset.max; if (!max) return;
+    if (!el.dataset.size) el.dataset.size = parseFloat(getComputedStyle(el).fontSize);
+    var size = +el.dataset.size;
+    el.style.fontSize = size + 'px';
+    while (el.scrollWidth > max && size > 14) { size -= 1; el.style.fontSize = size + 'px'; }
+  }
+
+  function drawQR(id) {
+    var box = document.getElementById('qr');
+    if (typeof qrcode !== 'function') { say('QR library did not load (check your internet connection), so the QR box is empty.', 'err'); return; }
+    var q = qrcode(0, 'M'); q.addData(VERIFY + id); q.make();
+    var n = q.getModuleCount(), quiet = 2, total = n + quiet * 2, d = '';
+    for (var r = 0; r < n; r++) for (var c = 0; c < n; c++) if (q.isDark(r, c)) d += 'M' + (c + quiet) + ' ' + (r + quiet) + 'h1v1h-1z';
+    box.style.border = '0';
+    box.setAttribute('aria-label', 'QR code linking to the verification page for ' + id);
+    box.innerHTML = '<svg width="64" height="64" viewBox="0 0 ' + total + ' ' + total + '" shape-rendering="crispEdges"><rect width="' + total + '" height="' + total + '" fill="#fff"/><path d="' + d + '" fill="#1B2E4B"/></svg>';
+  }
+
+  function load(id) {
+    id = String(id || '').trim().toUpperCase();
+    document.getElementById('cid').value = id;
+    if (!RE.test(id)) { say('Enter a certificate ID like FSA-2026-0001.', 'warn'); return; }
+    fetch('../certs/' + id + '.json', { cache: 'no-store' })
+      .then(function (r) { if (!r.ok) throw new Error(r.status === 404 ? 'No file certs/' + id + '.json' : 'HTTP ' + r.status); return r.json(); })
+      .then(function (c) {
+        document.querySelectorAll('[data-f]').forEach(function (el) { var v = c[el.dataset.f]; if (v != null && v !== '') el.textContent = v; });
+        document.title = 'Certificate ' + id + ' - ' + (c.name || '');
+        document.fonts.ready.then(function () { document.querySelectorAll('[data-max]').forEach(fit); });
+        drawQR(id);
+        if (c.status === 'revoked') say('Warning: this certificate is marked REVOKED in its JSON file.', 'err');
+        else say('Loaded ' + id + '. Check every detail before printing.', '');
+        history.replaceState(null, '', '?id=' + id);
+      })
+      .catch(function (e) { say('Could not load ' + id + ': ' + e.message, 'err'); });
+  }
+
+  document.getElementById('load').addEventListener('submit', function (e) { e.preventDefault(); load(document.getElementById('cid').value); });
+  var q = new URLSearchParams(location.search).get('id');
+  if (q) load(q); else say('Add ?id=FSA-2026-0001 to the address, or type an ID above.', 'warn');
+})();
+</script>
+</body>
+</html>

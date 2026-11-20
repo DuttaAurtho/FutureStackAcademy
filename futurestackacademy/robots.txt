@@ -3,5 +3,7 @@ Allow: /
 Disallow: /signals/
 Disallow: /cdn-cgi/
 Disallow: /_/
+Disallow: /certs/
+Disallow: /tools/
 
 Sitemap: https://www.futurestackacademy.com/sitemap.xml
