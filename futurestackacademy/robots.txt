@@ -4,4 +4,4 @@ Disallow: /signals/
 Disallow: /cdn-cgi/
 Disallow: /_/
 
-Sitemap: https://futurestackacademy.com/sitemap.xml
+Sitemap: https://www.futurestackacademy.com/sitemap.xml
