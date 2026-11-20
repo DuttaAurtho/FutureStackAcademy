@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 840" width="1200" height="840">
+<defs>
+<radialGradient id="g1" cx=".85" cy=".2" r=".75"><stop offset="0" stop-color="#E8772E" stop-opacity=".32"/><stop offset="1" stop-color="#E8772E" stop-opacity="0"/></radialGradient>
+<radialGradient id="g2" cx=".1" cy=".95" r=".6"><stop offset="0" stop-color="#2f6fb5" stop-opacity=".35"/><stop offset="1" stop-color="#2f6fb5" stop-opacity="0"/></radialGradient>
+<pattern id="d" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.6" fill="#fff" opacity=".07"/></pattern>
+</defs>
+<rect width="1200" height="840" fill="#0B1626"/><rect width="1200" height="840" fill="url(#d)"/><rect width="1200" height="840" fill="url(#g1)"/><rect width="1200" height="840" fill="url(#g2)"/>
+<!-- people around a shared table: mentor + students -->
+<g transform="translate(700 150)">
+  <rect x="20" y="40" width="360" height="230" rx="18" fill="#16263b" stroke="#2f4a6e" stroke-width="3"/>
+  <rect x="44" y="64" width="312" height="22" rx="11" fill="#22395a"/>
+  <rect x="44" y="104" width="190" height="14" rx="7" fill="#E8772E"/>
+  <rect x="44" y="132" width="250" height="14" rx="7" fill="#5b7799"/>
+  <rect x="44" y="160" width="220" height="14" rx="7" fill="#5b7799"/>
+  <rect x="44" y="188" width="150" height="14" rx="7" fill="#7cc4ff"/>
+  <circle cx="320" cy="210" r="30" fill="#22a06b"/><path d="M306 210l10 10 18-20" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="-10" y="330" width="420" height="22" rx="11" fill="#2a4870"/>
+  <g><circle cx="60" cy="300" r="30" fill="#E8772E"/><path d="M14 330a46 40 0 0 1 92 0z" fill="#E8772E"/></g>
+  <g><circle cx="160" cy="300" r="30" fill="#9fb6cf"/><path d="M114 330a46 40 0 0 1 92 0z" fill="#9fb6cf"/></g>
+  <g><circle cx="260" cy="300" r="30" fill="#fff"/><path d="M214 330a46 40 0 0 1 92 0z" fill="#fff"/></g>
+  <g><circle cx="360" cy="300" r="30" fill="#7cc4ff"/><path d="M314 330a46 40 0 0 1 92 0z" fill="#7cc4ff"/></g>
+  <g transform="translate(330 -30)"><rect width="120" height="70" rx="16" fill="#fff"/><path d="M28 70l-8 22 30-22z" fill="#fff"/><circle cx="38" cy="35" r="7" fill="#1B2E4B"/><circle cx="60" cy="35" r="7" fill="#1B2E4B"/><circle cx="82" cy="35" r="7" fill="#E8772E"/></g>
+</g>
+<g font-family="Segoe UI, Arial, sans-serif">
+<text x="110" y="200" font-size="26" font-weight="700" letter-spacing="6" fill="#E8772E">OUR CULTURE</text>
+<text x="110" y="280" font-size="62" font-weight="800" fill="#fff">Learn by building.</text>
+<text x="110" y="356" font-size="62" font-weight="800" fill="#fff">Grow together.</text>
+<text x="110" y="408" font-size="28" font-weight="500" fill="#B4C0D3">Since 2018 · Uttara, Dhaka</text>
+<g font-size="26" font-weight="700">
+<rect x="110" y="560" width="228" height="62" rx="31" fill="#16263b" stroke="#E8772E" stroke-width="2"/><text x="146" y="600" fill="#fff">Mentor-led</text>
+<rect x="356" y="560" width="250" height="62" rx="31" fill="#16263b" stroke="#2f4a6e" stroke-width="2"/><text x="390" y="600" fill="#fff">Project-based</text>
+<rect x="110" y="640" width="290" height="62" rx="31" fill="#16263b" stroke="#2f4a6e" stroke-width="2"/><text x="144" y="680" fill="#fff">Open feedback</text>
+<rect x="418" y="640" width="300" height="62" rx="31" fill="#16263b" stroke="#2f4a6e" stroke-width="2"/><text x="452" y="680" fill="#fff">Equal opportunity</text>
+</g>
+</g>
+</svg>
