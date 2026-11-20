@@ -176,6 +176,23 @@ body > div.bg-ink.text-silver strong { color: var(--color-accent); }
 body > div.bg-ink.text-silver [class~="text-[#33333d]"] { color: #3A4E6E; }
 body > div.bg-ink.text-silver a[href^="tel:"] { color: #FFFFFF; }
 
+/* Email next to the phone. Under 480px the bar has no room for the address,
+   so only the mail icon shows (font-size 0 hides the text node; the icon keeps its own size). */
+.fsa-topbar-sep { color: #3A4E6E; }
+.fsa-topbar-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #FFFFFF;
+  font-weight: 600;
+}
+.fsa-topbar-email:hover { color: var(--color-accent); }
+.fsa-topbar-email i { font-size: 16px; color: var(--color-accent); }
+@media (max-width: 479px) {
+  .fsa-topbar-sep { display: none; }
+  .fsa-topbar-email { font-size: 0; gap: 0; }
+}
+
 /* Solid navbar: no transparency or blur, stays white on scroll
    (the site script sets an inline translucent background; !important wins over it). */
 [data-cit-header],
