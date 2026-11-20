@@ -306,76 +306,99 @@
     <main>
     <style>
         .vf-hero{position:relative;overflow:hidden;background:#0B1626}
-        .vf-label{display:flex;align-items:center;gap:9px;margin-bottom:16px}
-        .vf-label span:first-child{width:26px;height:2px;background:#E8772E}
-        .vf-label span:last-child{font-size:12.5px;font-weight:700;letter-spacing:.13em;color:#E8772E}
-        .vf-form{margin-top:28px;display:flex;gap:12px;max-width:560px}
-        .vf-field{flex:1;min-width:0}
-        .vf-field label{display:block;margin-bottom:8px;font-size:13.5px;font-weight:700;color:#d4d4dc}
-        .vf-field input{width:100%;box-sizing:border-box;height:52px;border-radius:14px;border:1.5px solid #2a3a52;background:#fff;color:#1B2E4B;padding:0 16px;font:700 17px/1 inherit;letter-spacing:.04em;text-transform:uppercase}
-        .vf-field input::placeholder{color:#94a3b8;font-weight:600}
-        .vf-field input:focus{outline:none;border-color:#E8772E;box-shadow:0 0 0 4px rgba(232,119,46,.25)}
-        .vf-btn{align-self:flex-end;height:52px;padding:0 28px;border:0;border-radius:14px;background:#E8772E;color:#fff;font:800 15.5px/1 inherit;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:transform .2s,background .2s}
-        .vf-btn:hover{background:#d4691f;transform:translateY(-2px)}
-        .vf-btn:disabled{opacity:.6;cursor:wait;transform:none}
-        @media (max-width:560px){.vf-form{flex-direction:column}.vf-btn{align-self:stretch;justify-content:center}}
-        .vf-result{max-width:820px}
-        .vf-card{border-radius:22px;border:1px solid #e2e8f0;background:#fff;overflow:hidden;box-shadow:0 30px 60px -44px rgba(11,22,38,.6)}
-        .vf-bar{display:flex;align-items:flex-start;gap:14px;padding:20px 24px}
-        .vf-bar svg{flex-shrink:0;margin-top:2px}
-        .vf-bar h2{margin:0;font-size:19px;font-weight:800;line-height:1.3}
-        .vf-bar p{margin:4px 0 0;font-size:15px;line-height:1.55}
+        .vf-hero-in{position:relative;display:flex;align-items:center;justify-content:space-between;gap:24px 40px;padding-top:28px;padding-bottom:28px}
+        .vf-label{display:block;margin-bottom:6px;font-size:11.5px;font-weight:700;letter-spacing:.13em;color:#E8772E}
+        .vf-title{margin:0;font-size:clamp(22px,2.4vw,30px);font-weight:800;line-height:1.2;letter-spacing:-.02em;color:#fff}
+        .vf-sub{margin:6px 0 0;font-size:14px;line-height:1.55;color:#a5a5b4;max-width:520px}
+        .vf-form{display:flex;gap:10px;flex:0 1 420px;min-width:0}
+        .vf-form label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+        .vf-form input{flex:1;min-width:0;box-sizing:border-box;height:48px;border-radius:12px;border:1.5px solid #2a3a52;background:#fff;color:#1B2E4B;padding:0 16px;font:700 15.5px/1 inherit;letter-spacing:.04em;text-transform:uppercase}
+        .vf-form input::placeholder{color:#94a3b8;font-weight:600}
+        .vf-form input:focus{outline:none;border-color:#E8772E;box-shadow:0 0 0 4px rgba(232,119,46,.25)}
+        .vf-btn{height:48px;padding:0 24px;border:0;border-radius:12px;background:#E8772E;color:#fff;font:800 15px/1 inherit;cursor:pointer;transition:background .2s}
+        .vf-btn:hover{background:#d4691f}
+        .vf-btn:disabled{opacity:.6;cursor:wait}
+        @media (max-width:860px){.vf-hero-in{flex-direction:column;align-items:stretch}.vf-form{flex-basis:auto}}
+        @media (max-width:420px){.vf-form{flex-direction:column}.vf-form input,.vf-btn{flex:none;width:100%}}
+
+        .vf-wrap{background:#F1F4F8;padding:clamp(24px,4vw,48px) 0 clamp(40px,5vw,72px)}
+        .vf-result{max-width:880px;margin:0 auto}
+        .vf-card{border-radius:20px;border:1px solid #e2e8f0;background:#fff;overflow:hidden;box-shadow:0 24px 50px -40px rgba(11,22,38,.55)}
+        .vf-bar{display:flex;align-items:center;gap:14px;padding:16px 22px}
+        .vf-bar svg{flex-shrink:0}
+        .vf-bar h2{margin:0;font-size:16.5px;font-weight:800;line-height:1.3}
+        .vf-bar p{margin:2px 0 0;font-size:13.5px;line-height:1.5}
+        .vf-bar .vf-checked{margin-left:auto;font-size:12.5px;white-space:nowrap}
         .vf-valid .vf-bar{background:#DCFCE7;color:#15803D}
-        .vf-valid .vf-bar p{color:#166534}
+        .vf-valid .vf-bar p,.vf-valid .vf-bar .vf-checked{color:#166534}
         .vf-revoked{border-color:#FECDCA}
-        .vf-revoked .vf-bar{background:#FEE4E2;color:#B42318}
+        .vf-revoked .vf-bar{background:#FEE4E2;color:#B42318;align-items:flex-start}
         .vf-revoked .vf-bar p{color:#912018}
-        .vf-neutral .vf-bar{background:#F1F5F9;color:#1B2E4B}
+        .vf-neutral .vf-bar{background:#fff;color:#1B2E4B;align-items:flex-start}
         .vf-neutral .vf-bar p{color:#475569}
-        .vf-body{padding:24px}
-        .vf-name{margin:0;font-size:clamp(24px,3vw,32px);font-weight:800;color:#1B2E4B;letter-spacing:-.02em;overflow-wrap:anywhere}
-        .vf-grid{margin:20px 0 0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-        @media (max-width:640px){.vf-grid{grid-template-columns:1fr}}
-        .vf-grid div{border-radius:14px;background:#F8FAFC;border:1px solid #e2e8f0;padding:12px 14px}
-        .vf-grid dt{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#64748B}
-        .vf-grid dd{margin:4px 0 0;font-size:15.5px;font-weight:700;color:#1B2E4B;overflow-wrap:anywhere}
-        .vf-foot{margin:20px 0 0;padding-top:16px;border-top:1px solid #e2e8f0;font-size:14px;line-height:1.6;color:#475569}
-        .vf-foot a{color:#C9631F;font-weight:700}
-        .vf-loading{display:flex;align-items:center;gap:12px;padding:22px 24px;font-size:15px;font-weight:700;color:#1B2E4B}
+        .vf-bar a{color:inherit;font-weight:700;text-decoration:underline}
+
+        .vf-body{padding:22px 22px 6px}
+        .vf-k{display:block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#64748B}
+        .vf-v{display:block;margin-top:4px;font-size:14.5px;font-weight:700;color:#1B2E4B;overflow-wrap:anywhere}
+        .vf-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+        .vf-name{margin:4px 0 0;font-size:clamp(24px,3vw,30px);font-weight:800;line-height:1.15;color:#1B2E4B;letter-spacing:-.02em;overflow-wrap:anywhere}
+        .vf-pill{flex-shrink:0;display:inline-block;border-radius:999px;background:#EEF2F7;padding:6px 12px;font-size:12px;font-weight:700;color:#1B2E4B;white-space:nowrap}
+        .vf-course{margin-top:20px;padding-bottom:16px;border-bottom:1px solid #e2e8f0}
+        .vf-course .vf-v{font-size:17px;font-weight:800}
+        .vf-grid{margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:24px}
+        .vf-grid div{padding:14px 0;border-bottom:1px solid #e2e8f0}
+        .vf-grid dd{margin:0}
+        .vf-foot{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:6px;padding:14px 22px;background:#F8FAFC;border-top:1px solid #e2e8f0;font-size:13px;line-height:1.55;color:#475569}
+        .vf-foot p{margin:0}
+        .vf-foot a{color:#1B2E4B;font-weight:700}
+        .vf-print{flex-shrink:0;border:1px solid #cbd5e1;border-radius:10px;background:#fff;padding:9px 14px;font:700 13px/1 inherit;color:#1B2E4B;cursor:pointer}
+        .vf-print:hover{border-color:#1B2E4B}
+
+        @media (max-width:640px){
+            .vf-bar{padding:14px 16px}
+            .vf-bar .vf-checked{display:none}
+            .vf-body{padding:18px 16px 4px}
+            .vf-head{flex-direction:column;gap:8px}
+            .vf-head .vf-k{display:none}
+            .vf-grid{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:16px}
+            .vf-foot{flex-direction:column;align-items:flex-start;padding:14px 16px}
+        }
+
+        .vf-loading{display:flex;align-items:center;gap:12px;padding:20px 22px;font-size:15px;font-weight:700;color:#1B2E4B}
         .vf-spin{width:22px;height:22px;border-radius:50%;border:3px solid #e2e8f0;border-top-color:#E8772E;animation:vfspin .8s linear infinite}
         @keyframes vfspin{to{transform:rotate(360deg)}}
         @media (prefers-reduced-motion:reduce){.vf-spin{animation:none}}
-        .vf-help{margin-top:28px;font-size:14.5px;line-height:1.6;color:#475569;max-width:820px}
+        .vf-help{max-width:880px;margin:22px auto 0;font-size:13.5px;line-height:1.6;color:#64748B}
         .vf-help a{color:#C9631F;font-weight:700}
+
+        @media print{
+            body > *:not(main){display:none!important}
+            main > *:not(.vf-wrap):not(style){display:none!important}
+            .vf-wrap{background:#fff;padding:0}
+            .vf-help,.vf-print{display:none!important}
+            .vf-card{box-shadow:none}
+            *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+        }
     </style>
 
     <section data-fsa-hero class="vf-hero">
         <div aria-hidden="true" class="absolute inset-0 [background-image:radial-gradient(#2a2a34_1px,transparent_1px)] [background-size:30px_30px]"></div>
-        <div class="page-container relative pt-6 pb-[clamp(56px,7vw,80px)]">
-            <nav aria-label="Breadcrumb" class="mb-[clamp(28px,4vw,44px)]">
-                <ol class="m-0 flex list-none flex-wrap items-center gap-[9px] p-0 text-13 font-semibold">
-                    <li><a href="index.html" class="text-silver hover:text-white">Home</a></li>
-                    <li aria-hidden="true" class="text-body">/</li>
-                    <li aria-current="page" class="text-white">Verify Certificate</li>
-                </ol>
-            </nav>
-            <div class="vf-label"><span aria-hidden="true"></span><span>CERTIFICATE VERIFICATION</span></div>
-            <h1 class="text-[clamp(32px,4.4vw,52px)] font-extrabold leading-[1.08] tracking-[-0.035em] text-white text-balance">Verify a Futurestack Academy certificate</h1>
-            <p class="mt-5 text-[clamp(15.5px,1.2vw,18px)] leading-[1.62] text-[#a5a5b4] text-pretty">For employers, universities and embassies. Enter the certificate ID printed on the certificate, or scan its QR code.</p>
-
+        <div class="page-container vf-hero-in">
+            <div>
+                <span class="vf-label">CERTIFICATE VERIFICATION</span>
+                <h1 class="vf-title">Verify a Futurestack Academy certificate</h1>
+                <p class="vf-sub">For employers, universities and embassies. Enter the certificate ID printed on the certificate, or scan its QR code.</p>
+            </div>
             <form id="vf-form" class="vf-form" novalidate>
-                <div class="vf-field">
-                    <label for="vf-id">Certificate ID</label>
-                    <input id="vf-id" name="id" type="text" placeholder="FSA-2018-0001" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="20" required>
-                </div>
-                <button id="vf-btn" type="submit" class="vf-btn">Verify
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M5 12h13M12 5l7 7-7 7"/></svg>
-                </button>
+                <label for="vf-id">Certificate ID</label>
+                <input id="vf-id" name="id" type="text" placeholder="FSA-2018-0001" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="20" required>
+                <button id="vf-btn" type="submit" class="vf-btn">Verify</button>
             </form>
         </div>
     </section>
 
-    <div class="py-[clamp(40px,5vw,72px)]">
+    <div class="vf-wrap">
         <div class="page-container">
             <div id="vf-result" class="vf-result" aria-live="polite"></div>
             <p class="vf-help">Every Futurestack Academy certificate carries a unique ID in the format <b>FSA-YYYY-XXXX</b> and a QR code that opens this page. For written confirmation, email <a href="mailto:info@futurestackacademy.com">info@futurestackacademy.com</a>.</p>
@@ -390,39 +413,51 @@
         var btn = document.getElementById('vf-btn');
         var out = document.getElementById('vf-result');
         var MAIL = 'info@futurestackacademy.com';
+        var MAIL_A = '<a href="mailto:' + MAIL + '">' + MAIL + '</a>';
 
         function esc(s) {
             return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
                 return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
             });
         }
-        var ICON_OK = '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.7 2.7L16.5 9.5"/></svg>';
+        var ICON_OK = '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.7 2.7L16.5 9.5"/></svg>';
         var ICON_X = '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>';
         var ICON_Q = '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>';
         var ICON_W = '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l10 18H2z"/><path d="M12 10v4M12 17.5v.01"/></svg>';
 
-        function card(cls, icon, title, text, body) {
-            out.innerHTML = '<div class="vf-card ' + cls + '"><div class="vf-bar">' + icon + '<div><h2>' + title + '</h2><p>' + text + '</p></div></div>' + (body || '') + '</div>';
+        function bar(icon, title, text, extra) {
+            return '<div class="vf-bar">' + icon + '<div><h2>' + title + '</h2><p>' + text + '</p></div>' + (extra || '') + '</div>';
         }
+        function show(cls, html) { out.innerHTML = '<div class="vf-card ' + cls + '">' + html + '</div>'; }
+
         function notFound() {
-            card('vf-neutral', ICON_Q, 'No certificate found', 'Check the ID and try again. It looks like FSA-YYYY-XXXX. If it still doesn’t match, contact <a href="mailto:' + MAIL + '" style="color:#C9631F;font-weight:700">' + MAIL + '</a>.');
-        }
-        function valid(c) {
-            var rows = [
-                ['Certificate ID', c.id], ['Issue date', c.issued], ['Course', c.course], ['Department', c.department],
-                ['Batch', c.batch], ['Duration', [c.duration, c.mode].filter(Boolean).join(' · ')],
-                ['Study period', [c.start, c.end].filter(Boolean).join(' – ')], ['Result', c.result]
-            ];
-            var grid = rows.filter(function (r) { return r[1]; }).map(function (r) { return '<div><dt>' + r[0] + '</dt><dd>' + esc(r[1]) + '</dd></div>'; }).join('');
-            card('vf-valid', ICON_OK, 'Valid certificate', 'This certificate was issued by Futurestack Academy.',
-                '<div class="vf-body"><p class="vf-name">' + esc(c.name) + '</p><dl class="vf-grid">' + grid + '</dl>' +
-                '<p class="vf-foot">Need written confirmation? Email <a href="mailto:' + MAIL + '">' + MAIL + '</a> or call <a href="tel:+8801644099435">+880 1644-099435</a> with this certificate ID.</p></div>');
-        }
-        function revoked(id) {
-            card('vf-revoked', ICON_X, 'Certificate revoked', 'Certificate ' + esc(id) + ' was cancelled by Futurestack Academy and is no longer valid. Contact <a href="mailto:' + MAIL + '" style="color:#B42318;font-weight:700">' + MAIL + '</a> for details.');
+            show('vf-neutral', bar(ICON_Q, 'No certificate found', 'Check the ID and try again. It looks like FSA-YYYY-XXXX. If it still doesn’t match, contact ' + MAIL_A + '.'));
         }
         function failed() {
-            card('vf-neutral', ICON_W, 'Couldn’t check right now', 'Please try again in a minute.');
+            show('vf-neutral', bar(ICON_W, 'Couldn’t check right now', 'Please try again in a minute.'));
+        }
+        function revoked(id) {
+            show('vf-revoked', bar(ICON_X, 'Certificate revoked', 'Certificate ' + esc(id) + ' was cancelled by Futurestack Academy and is no longer valid. Contact ' + MAIL_A + ' for details.'));
+        }
+        function today() {
+            return new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+        }
+        function field(k, v) { return v ? '<div><dt class="vf-k">' + k + '</dt><dd class="vf-v">' + esc(v) + '</dd></div>' : ''; }
+
+        function valid(c) {
+            var period = [c.start, c.end].filter(Boolean).join(' – ');
+            var grid = field('Department', c.department) + field('Batch', c.batch) + field('Mode', c.mode) +
+                field('Duration', c.duration) + field('Study period', period) + field('Result', c.result) +
+                field('Issue date', c.issued) + field('Issued by', 'Futurestack Academy, Uttara, Dhaka');
+            show('vf-valid',
+                bar(ICON_OK, 'Valid certificate', 'This certificate was issued by Futurestack Academy.', '<span class="vf-checked">Checked on ' + today() + '</span>') +
+                '<div class="vf-body">' +
+                    '<div class="vf-head"><div><span class="vf-k">Student name</span><p class="vf-name">' + esc(c.name) + '</p></div><span class="vf-pill">ID · ' + esc(c.id) + '</span></div>' +
+                    '<div class="vf-course"><span class="vf-k">Course</span><span class="vf-v">' + esc(c.course) + '</span></div>' +
+                    '<dl class="vf-grid">' + grid + '</dl>' +
+                '</div>' +
+                '<div class="vf-foot"><p>Need written confirmation? Email ' + MAIL_A + ' or call <a href="tel:+8801644099435">+880 1644-099435</a> with this certificate ID.</p>' +
+                '<button type="button" class="vf-print" onclick="window.print()">Print this result</button></div>');
         }
 
         function verify(raw) {
