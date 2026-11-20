@@ -661,3 +661,9 @@ article img[data-hover="zoom"] {
 }
 .fsa-map__open:hover { background-color: var(--color-primary-hover); color: #FFFFFF; }
 .fsa-map__open i { color: var(--color-accent); font-size: 17px; }
+
+/* Course pages, phone bottom bar: keep the fee on one line now that it has email + call buttons */
+[data-cit-mobilebar] { gap: 8px; }
+[data-cit-mobilebar] .font-display { white-space: nowrap; font-size: 17px; }
+[data-cit-mobilebar] > a { width: 44px; height: 44px; }
+[data-cit-mobilebar] > button { padding-left: 18px; padding-right: 18px; white-space: nowrap; }
