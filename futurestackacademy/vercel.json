@@ -49,6 +49,16 @@
       "source": "/gallery",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/futurestackacademy",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/futurestackacademy/:path*",
+      "destination": "/:path*",
+      "permanent": true
     }
   ]
 }
