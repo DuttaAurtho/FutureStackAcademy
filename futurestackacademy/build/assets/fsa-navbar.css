@@ -142,7 +142,25 @@
   background: rgba(255, 255, 255, .7); border-color: rgba(27, 46, 75, .12); color: #1B2E4B;
 }
 
+/* ---------- other sticky bars (course page tabs) follow the navbar ---------- */
+:root { --fsa-nav-h: 100px; }                 /* 16px + 68px pill + 16px */
+[data-spy] {
+  top: 0 !important;
+  transition: top .55s cubic-bezier(.32, .72, 0, 1);
+}
+.fsa-nav-shown [data-spy] { top: var(--fsa-nav-h) !important; }
+/* course sidebar (price card) sticks below the tab bar (~66px tall) */
+@media (min-width: 981px) {
+  [data-cit-enrollcol] {
+    top: 86px !important;
+    transition: top .55s cubic-bezier(.32, .72, 0, 1);
+  }
+  .fsa-nav-shown [data-cit-enrollcol] { top: calc(var(--fsa-nav-h) + 86px) !important; }
+}
+@media (prefers-reduced-motion: reduce) { [data-spy] { transition: none; } }
+
 /* ---------- phones / tablets: same glass bar, slightly smaller ---------- */
+@media (max-width: 1279px) { :root { --fsa-nav-h: 80px; } } /* 10px + 60px + 10px */
 @media (max-width: 1279px) {
   [data-cit-header] { padding: 10px 12px; }
   [data-cit-header] [data-cit-headerinner] { height: 60px; padding: 0 8px 0 16px !important; border-radius: 20px; }

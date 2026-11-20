@@ -27,6 +27,8 @@
     else if (y > lastY + 4) header.classList.add('fsa-nav--hidden');
     else if (y < lastY - 8) header.classList.remove('fsa-nav--hidden');
     if (Math.abs(y - lastY) > 4) lastY = y;
+    // lets other sticky bars (e.g. the course tab bar) sit below the navbar only while it is shown
+    document.documentElement.classList.toggle('fsa-nav-shown', !header.classList.contains('fsa-nav--hidden'));
   }
   update();
   document.addEventListener('DOMContentLoaded', function () {
