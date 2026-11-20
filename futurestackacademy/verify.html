@@ -315,11 +315,19 @@
         .vf-form input{flex:1;min-width:0;box-sizing:border-box;height:48px;border-radius:12px;border:1.5px solid #2a3a52;background:#fff;color:#1B2E4B;padding:0 16px;font:700 15.5px/1 inherit;letter-spacing:.04em;text-transform:uppercase}
         .vf-form input::placeholder{color:#94a3b8;font-weight:600}
         .vf-form input:focus{outline:none;border-color:#E8772E;box-shadow:0 0 0 4px rgba(232,119,46,.25)}
-        .vf-btn{height:48px;padding:0 24px;border:0;border-radius:12px;background:#E8772E;color:#fff;font:800 15px/1 inherit;cursor:pointer;transition:background .2s}
+        .vf-btn{height:48px;padding:0 24px;border:0;border-radius:12px;background:#E8772E;color:#0B1626;font:800 15px/1 inherit;cursor:pointer;transition:background .2s}
         .vf-btn:hover{background:#d4691f}
         .vf-btn:disabled{opacity:.6;cursor:wait}
+        .vf-btn svg,.vf-btn .vf-m,.vf-ph{display:none}
         @media (max-width:860px){.vf-hero-in{flex-direction:column;align-items:stretch}.vf-form{flex-basis:auto}}
-        @media (max-width:420px){.vf-form{flex-direction:column}.vf-form input,.vf-btn{flex:none;width:100%}}
+        /* Desktop, before an ID is checked: tall centred hero */
+        @media (min-width:861px){
+            .vf-hero:not(.is-compact) .vf-hero-in{flex-direction:column;align-items:center;text-align:center;gap:0;padding-top:64px;padding-bottom:72px}
+            .vf-hero:not(.is-compact) .vf-label{margin-bottom:12px}
+            .vf-hero:not(.is-compact) .vf-title{font-size:clamp(32px,3.4vw,44px);max-width:640px}
+            .vf-hero:not(.is-compact) .vf-sub{margin:16px auto 0;max-width:600px;font-size:15px}
+            .vf-hero:not(.is-compact) .vf-form{flex:none;width:100%;max-width:540px;margin-top:28px}
+        }
 
         .vf-wrap{background:#F1F4F8;padding:clamp(24px,4vw,48px) 0 clamp(40px,5vw,72px)}
         .vf-result{max-width:880px;margin:0 auto}
@@ -355,14 +363,59 @@
         .vf-print{flex-shrink:0;border:1px solid #cbd5e1;border-radius:10px;background:#fff;padding:9px 14px;font:700 13px/1 inherit;color:#1B2E4B;cursor:pointer}
         .vf-print:hover{border-color:#1B2E4B}
 
+        .vf-ico{width:34px;height:34px;flex-shrink:0;border-radius:999px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px}
+        .vf-valid .vf-ico{border:2px solid #15803D;color:#15803D}
+        .vf-revoked .vf-ico{background:#B42318;color:#fff}
+        .vf-neutral .vf-ico{background:#E6ECF4;color:#1B2E4B}
+        .vf-idle{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;background:#fff;border:1px dashed #CBD3DE;border-radius:16px;padding:28px 20px;font-size:14.5px;line-height:1.55;color:#64748B}
+        .vf-idle > span:first-child{width:44px;height:44px;border-radius:999px;background:#E6ECF4;color:#1B2E4B;display:flex;align-items:center;justify-content:center}
+        @media (min-width:641px){
+            .vf-idle{border:1px solid #E8EDF3;border-radius:14px;padding:30px 20px;font-size:14px}
+            .vf-idle > span:first-child{display:none}
+        }
+
+        /* Phone layout (VerifyFlowMobile design) */
         @media (max-width:640px){
-            .vf-bar{padding:14px 16px}
+            .vf-hero-in{padding-top:32px;padding-bottom:30px;gap:0}
+            .vf-label{font-size:12px;letter-spacing:.14em;margin-bottom:14px}
+            .vf-title{font-size:30px;line-height:1.15}
+            .vf-sub{margin-top:14px;font-size:15px;line-height:1.6;color:#B4C0D3}
+            .vf-form{flex-direction:column;gap:10px;margin-top:18px}
+            .vf-form label{position:static;width:auto;height:auto;overflow:visible;clip:auto;font-size:13px;font-weight:600;color:#C3CEDF}
+            .vf-form input{flex:none;width:100%;height:54px;border:none;font-size:17px}
+            .vf-btn{flex:none;width:100%;height:54px;display:flex;align-items:center;justify-content:center;gap:8px;color:#0B1626;font-size:17px}
+            .vf-btn svg{display:block}
+            .vf-btn .vf-m,.vf-ph{display:inline}
+            .vf-dk{display:none}
+
+            .vf-wrap{padding:18px 0 28px}
+            .vf-card{border-radius:18px;box-shadow:none}
+            .vf-bar{padding:16px 18px;gap:12px}
+            .vf-bar h2{font-size:18px}
             .vf-bar .vf-checked{display:none}
-            .vf-body{padding:18px 16px 4px}
-            .vf-head{flex-direction:column;gap:8px}
+            .vf-revoked,.vf-neutral{border-radius:16px}
+            .vf-revoked .vf-bar,.vf-neutral .vf-bar{flex-wrap:wrap;align-items:center;padding:20px 18px;background:#fff}
+            .vf-revoked .vf-bar > div,.vf-neutral .vf-bar > div{display:contents}
+            .vf-revoked .vf-bar h2,.vf-neutral .vf-bar h2{flex:1}
+            .vf-revoked .vf-bar h2{color:#7A271A}
+            .vf-revoked .vf-bar p,.vf-neutral .vf-bar p{flex-basis:100%;margin-top:0;font-size:14.5px;line-height:1.6;color:#475569}
+            .vf-revoked .vf-bar a,.vf-neutral .vf-bar a{color:#C9631F;text-decoration:none}
+
+            .vf-body{padding:0 18px}
+            .vf-head{flex-direction:column;gap:10px;margin:0 -18px;padding:20px 18px 14px;border-bottom:1px solid #EEF1F5}
             .vf-head .vf-k{display:none}
-            .vf-grid{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:16px}
-            .vf-foot{flex-direction:column;align-items:flex-start;padding:14px 16px}
+            .vf-name{margin:0;font-size:26px}
+            .vf-pill{display:inline-flex;align-items:center;height:30px;padding:0 12px;background:#F3F6FA;font-size:13px}
+            .vf-course{margin-top:0;padding:14px 0;border-bottom-color:#EEF1F5}
+            .vf-course .vf-v{font-size:16px;font-weight:700}
+            .vf-k{font-size:12px;letter-spacing:.06em}
+            .vf-v{font-size:15px;margin-top:3px}
+            .vf-grid{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:14px}
+            .vf-grid div{border-bottom-color:#EEF1F5}
+            .vf-foot{display:block;margin:4px 18px 18px;padding:14px;border:0;border-radius:12px;background:#F3F6FA}
+            .vf-foot a{color:#1B2E4B}
+            .vf-print{display:none}
+            .vf-help{font-size:13px}
         }
 
         .vf-loading{display:flex;align-items:center;gap:12px;padding:20px 22px;font-size:15px;font-weight:700;color:#1B2E4B}
@@ -383,6 +436,7 @@
     </style>
 
     <section data-fsa-hero class="vf-hero">
+        <script>if (/[?&]id=/.test(location.search)) document.currentScript.parentNode.classList.add('is-compact');</script>
         <div aria-hidden="true" class="absolute inset-0 [background-image:radial-gradient(#2a2a34_1px,transparent_1px)] [background-size:30px_30px]"></div>
         <div class="page-container vf-hero-in">
             <div>
@@ -393,14 +447,14 @@
             <form id="vf-form" class="vf-form" novalidate>
                 <label for="vf-id">Certificate ID</label>
                 <input id="vf-id" name="id" type="text" placeholder="FSA-2018-0001" autocomplete="off" autocapitalize="characters" spellcheck="false" maxlength="20" required>
-                <button id="vf-btn" type="submit" class="vf-btn">Verify</button>
+                <button id="vf-btn" type="submit" class="vf-btn"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg><span>Verify<span class="vf-m"> certificate</span></span></button>
             </form>
         </div>
     </section>
 
     <div class="vf-wrap">
         <div class="page-container">
-            <div id="vf-result" class="vf-result" aria-live="polite"></div>
+            <div id="vf-result" class="vf-result" aria-live="polite"><div class="vf-idle"><span aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></svg></span><span class="vf-dk">The result will appear here.</span><span class="vf-ph">The result will appear here. On a phone, scanning the certificate's QR code opens this page with the result.</span></div></div>
             <p class="vf-help">Every Futurestack Academy certificate carries a unique ID in the format <b>FSA-YYYY-XXXX</b> and a QR code that opens this page. For written confirmation, email <a href="mailto:info@futurestackacademy.com">info@futurestackacademy.com</a>.</p>
         </div>
     </div>
@@ -420,10 +474,10 @@
                 return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
             });
         }
-        var ICON_OK = '<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.7 2.7L16.5 9.5"/></svg>';
-        var ICON_X = '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>';
-        var ICON_Q = '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>';
-        var ICON_W = '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l10 18H2z"/><path d="M12 10v4M12 17.5v.01"/></svg>';
+        var ICON_OK = '<span class="vf-ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>';
+        var ICON_X = '<span class="vf-ico" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg></span>';
+        var ICON_Q = '<span class="vf-ico" aria-hidden="true">?</span>';
+        var ICON_W = '<span class="vf-ico" aria-hidden="true">!</span>';
 
         function bar(icon, title, text, extra) {
             return '<div class="vf-bar">' + icon + '<div><h2>' + title + '</h2><p>' + text + '</p></div>' + (extra || '') + '</div>';
@@ -450,7 +504,7 @@
                 field('Duration', c.duration) + field('Study period', period) + field('Result', c.result) +
                 field('Issue date', c.issued) + field('Issued by', 'Futurestack Academy, Uttara, Dhaka');
             show('vf-valid',
-                bar(ICON_OK, 'Valid certificate', 'This certificate was issued by Futurestack Academy.', '<span class="vf-checked">Checked on ' + today() + '</span>') +
+                bar(ICON_OK, 'Valid certificate', '<span class="vf-dk">This certificate was issued by Futurestack Academy.</span><span class="vf-ph">Issued by Futurestack Academy</span>', '<span class="vf-checked">Checked on ' + today() + '</span>') +
                 '<div class="vf-body">' +
                     '<div class="vf-head"><div><span class="vf-k">Student name</span><p class="vf-name">' + esc(c.name) + '</p></div><span class="vf-pill">ID · ' + esc(c.id) + '</span></div>' +
                     '<div class="vf-course"><span class="vf-k">Course</span><span class="vf-v">' + esc(c.course) + '</span></div>' +
@@ -463,6 +517,7 @@
         function verify(raw) {
             var id = String(raw || '').trim().toUpperCase();
             input.value = id;
+            document.querySelector('.vf-hero').classList.add('is-compact');
             if (!RE.test(id)) { notFound(); return; }
             try { history.replaceState(null, '', 'verify.html?id=' + encodeURIComponent(id)); } catch (e) {}
             out.innerHTML = '<div class="vf-card"><div class="vf-loading"><span class="vf-spin" aria-hidden="true"></span>Checking certificate ' + esc(id) + '…</div></div>';
