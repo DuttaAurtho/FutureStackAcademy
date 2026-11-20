@@ -176,10 +176,13 @@ body > div.bg-ink.text-silver strong { color: var(--color-accent); }
 body > div.bg-ink.text-silver [class~="text-[#33333d]"] { color: #3A4E6E; }
 body > div.bg-ink.text-silver a[href^="tel:"] { color: #FFFFFF; }
 
-/* Email next to the phone. Under 480px the bar has no room for the address,
-   so only the mail icon shows (font-size 0 hides the text node; the icon keeps its own size). */
-.fsa-topbar-sep { color: #3A4E6E; }
+/* Email comes first in the top bar (email / phone). The markup has the phone first,
+   so flex order puts the email, then the divider, before it. Under 480px there is no
+   room for both in full: the email stays in full and the phone collapses to a tappable
+   phone icon on the right. */
+.fsa-topbar-sep { order: -1; color: #3A4E6E; }
 .fsa-topbar-email {
+  order: -2;
   display: inline-flex;
   align-items: center;
   gap: 7px;
@@ -190,7 +193,20 @@ body > div.bg-ink.text-silver a[href^="tel:"] { color: #FFFFFF; }
 .fsa-topbar-email i { font-size: 16px; color: var(--color-accent); }
 @media (max-width: 479px) {
   .fsa-topbar-sep { display: none; }
-  .fsa-topbar-email { font-size: 0; gap: 0; }
+  .fsa-topbar-email { font-size: 13px; }
+  body > div.bg-ink.text-silver a[href^="tel:"] {
+    margin-left: auto;
+    font-size: 0;            /* hides the number text; the icon below keeps its own size */
+    gap: 0;
+  }
+  body > div.bg-ink.text-silver a[href^="tel:"] .animate-cit-pulse { display: none; }
+  body > div.bg-ink.text-silver a[href^="tel:"]::after {
+    content: "\eb09";        /* tabler-icons: ti-phone */
+    font-family: tabler-icons;
+    font-size: 17px;
+    line-height: 1;
+    color: var(--color-accent);
+  }
 }
 
 /* Solid navbar: no transparency or blur, stays white on scroll
