@@ -1,0 +1,151 @@
+/* ============================================================
+   Floating glass navbar (Apple-style pill).
+   Two states, switched by build/assets/fsa-navbar.js:
+     .fsa-nav--dark      over the dark hero (top of page)
+     .fsa-nav--scrolled  after scrolling 80px, or on pages with no dark hero
+   !important is only used against the inline styles that app.js sets on scroll.
+   ============================================================ */
+
+[data-cit-header] {
+  position: sticky !important;
+  top: 0;
+  z-index: 70;
+  padding: 16px 16px;
+  border: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  pointer-events: none;
+  transition: background-color .3s ease;
+}
+/* dark band behind the pill at the top, so it sits on the same navy as the hero */
+[data-cit-header].fsa-nav--dark { background: #0B1626 !important; }
+
+[data-cit-header] [data-cit-headerinner] {
+  pointer-events: auto;
+  box-sizing: border-box;
+  max-width: 1220px;
+  width: 100%;
+  height: 68px;
+  margin: 0 auto;
+  padding: 0 10px 0 22px !important;
+  border-radius: 22px;
+  gap: 18px;
+  backdrop-filter: blur(22px) saturate(180%);
+  -webkit-backdrop-filter: blur(22px) saturate(180%);
+  transform-origin: 50% 0;
+  transition: background-color .3s ease, border-color .3s ease, box-shadow .3s ease,
+    transform .55s cubic-bezier(.32, .72, 0, 1), opacity .4s ease, filter .45s ease;
+}
+
+/* ---------- exit animation after the first screen ---------- */
+[data-cit-header].fsa-nav--hidden [data-cit-headerinner] {
+  transform: translateY(calc(-100% - 28px)) scale(.94);
+  opacity: 0;
+  filter: blur(6px);
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-cit-header] [data-cit-headerinner] { transition: opacity .2s ease; }
+  [data-cit-header].fsa-nav--hidden [data-cit-headerinner] { transform: none; filter: none; }
+}
+
+/* ---------- logo ---------- */
+[data-cit-header] .fsa-logo { display: block; height: 40px; width: auto; transition: opacity .3s ease; }
+[data-cit-header] .fsa-logo--light { display: none; }
+[data-cit-header].fsa-nav--dark .fsa-logo--light { display: block; }
+[data-cit-header].fsa-nav--dark .fsa-logo--dark { display: none; }
+
+/* ---------- links ---------- */
+[data-cit-header] nav a {
+  border-radius: 12px;
+  padding: 9px 15px;
+  transition: color .3s ease, background-color .3s ease;
+}
+[data-cit-header] nav a > span[aria-hidden="true"] { display: none; } /* old underline */
+
+/* ---------- iOS-style sliding indicator ---------- */
+[data-cit-header] nav { position: relative; }
+[data-cit-header] nav .group { position: relative; z-index: 1; }
+[data-cit-header] nav a { -webkit-tap-highlight-color: transparent; }
+[data-cit-header] nav a:active { transform: scale(.96); }
+[data-cit-header] nav a { transition: color .3s ease, transform .2s ease; }
+.fsa-nav-indicator {
+  position: absolute; left: 0; top: 0; z-index: 0;
+  border-radius: 12px; pointer-events: none; opacity: 0;
+  transition:
+    transform .55s cubic-bezier(.32, 1.25, .5, 1),
+    width .55s cubic-bezier(.32, 1.25, .5, 1),
+    height .55s cubic-bezier(.32, 1.25, .5, 1),
+    opacity .25s ease, background-color .3s ease, box-shadow .3s ease;
+  will-change: transform, width;
+}
+.fsa-nav-indicator.is-instant { transition: none !important; }
+@media (prefers-reduced-motion: reduce) { .fsa-nav-indicator { transition: opacity .2s ease; } }
+[data-cit-header].fsa-nav--dark .fsa-nav-indicator {
+  background: rgba(255, 255, 255, .16);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .28), 0 4px 14px rgba(0, 0, 0, .25);
+}
+[data-cit-header].fsa-nav--scrolled .fsa-nav-indicator {
+  background: rgba(27, 46, 75, .08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .6);
+}
+
+/* ---------- Enroll Now ---------- */
+[data-cit-header] [data-modal-trigger="admission-modal"] {
+  height: 48px;
+  padding: 0 20px;
+  border-radius: 16px;
+  font-weight: 800;
+  box-shadow: none;
+  transition: background-color .3s ease, color .3s ease, transform .2s ease;
+}
+[data-cit-header] [data-modal-trigger="admission-modal"] svg { stroke: currentColor; }
+
+/* ---------- mobile menu button ---------- */
+[data-cit-header] [data-sheet-toggle="drawer"] {
+  width: 44px; height: 44px; border-radius: 14px;
+  transition: background-color .3s ease, border-color .3s ease;
+}
+[data-cit-header] [data-sheet-toggle="drawer"] svg { stroke: currentColor; }
+
+/* ===== State 1: over the dark hero ===== */
+[data-cit-header].fsa-nav--dark [data-cit-headerinner] {
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .16);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .22), 0 10px 40px rgba(0, 0, 0, .35);
+}
+[data-cit-header].fsa-nav--dark nav a { color: rgba(255, 255, 255, .78); }
+[data-cit-header].fsa-nav--dark nav a:hover,
+[data-cit-header].fsa-nav--dark nav a.fsa-nav-on { color: #fff; }
+[data-cit-header].fsa-nav--dark nav a.font-bold { color: #fff; font-weight: 700; }
+[data-cit-header].fsa-nav--dark [data-modal-trigger="admission-modal"] { background: #E8772E; color: #0B1626; }
+[data-cit-header].fsa-nav--dark [data-modal-trigger="admission-modal"]:hover { background: #F08A45; }
+[data-cit-header].fsa-nav--dark [data-sheet-toggle="drawer"] {
+  background: rgba(255, 255, 255, .12); border-color: rgba(255, 255, 255, .22); color: #fff;
+}
+
+/* ===== State 2: scrolled (light glass) ===== */
+[data-cit-header].fsa-nav--scrolled [data-cit-headerinner] {
+  background: rgba(255, 255, 255, .62);
+  border: 1px solid rgba(255, 255, 255, .75);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .9), 0 10px 34px rgba(15, 23, 42, .12);
+}
+[data-cit-header].fsa-nav--scrolled nav a { color: #475569; }
+[data-cit-header].fsa-nav--scrolled nav a:hover,
+[data-cit-header].fsa-nav--scrolled nav a.fsa-nav-on { color: #1B2E4B; }
+[data-cit-header].fsa-nav--scrolled nav a.font-bold { color: #1B2E4B; font-weight: 700; }
+[data-cit-header].fsa-nav--scrolled [data-modal-trigger="admission-modal"] { background: #1B2E4B; color: #fff; }
+[data-cit-header].fsa-nav--scrolled [data-modal-trigger="admission-modal"]:hover { background: #26406A; }
+[data-cit-header].fsa-nav--scrolled [data-sheet-toggle="drawer"] {
+  background: rgba(255, 255, 255, .7); border-color: rgba(27, 46, 75, .12); color: #1B2E4B;
+}
+
+/* ---------- phones / tablets: same glass bar, slightly smaller ---------- */
+@media (max-width: 1279px) {
+  [data-cit-header] { padding: 10px 12px; }
+  [data-cit-header] [data-cit-headerinner] { height: 60px; padding: 0 8px 0 16px !important; border-radius: 20px; }
+  [data-cit-header] .fsa-logo { height: 34px; }
+  [data-cit-header] [data-modal-trigger="admission-modal"] { height: 44px; padding: 0 16px; border-radius: 14px; }
+}
