@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/success-story.html", "destination": "/instructors-teachers.html", "permanent": true },
+    { "source": "/success-story", "destination": "/instructors-teachers.html", "permanent": true }
+  ]
+}
