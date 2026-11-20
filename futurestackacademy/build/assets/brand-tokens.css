@@ -1,0 +1,57 @@
+/* ============================================================
+   Futurestackacademy — Brand color tokens
+   Source of truth: the logo (navy cap + orange "academy").
+   Rule: Navy = brand & structure. Orange = ONE accent (CTA/highlight).
+         Green = status only (Offline / Enrolling / success). Nothing else.
+   ============================================================ */
+
+:root {
+  /* Brand — Navy (logo cap, Enroll button) */
+  --navy-950: #0B1626;   /* darkest: hero bg, footer */
+  --navy-900: #12213A;   /* dark sections, dark tiles */
+  --navy-800: #1B2E4B;   /* PRIMARY: buttons, headings, logo */
+  --navy-700: #26406A;   /* hover for primary */
+  --navy-100: #E6ECF4;   /* tinted chips, light tiles */
+  --navy-50:  #F3F6FA;   /* light section bg */
+
+  /* Accent — Orange (logo "academy") — use sparingly */
+  --orange-600: #C9631F; /* accent text on white (passes AA) */
+  --orange-500: #E8772E; /* accent fills, highlight words, tiles */
+  --orange-100: #FCEBDD; /* soft accent bg */
+
+  /* Neutrals */
+  --ink:      #0F172A;   /* body headings */
+  --text:     #334155;   /* body text */
+  --muted:    #64748B;   /* secondary text */
+  --border:   #E2E8F0;
+  --surface:  #FFFFFF;
+  --bg-soft:  #F8FAFC;
+
+  /* Status only — never decorative */
+  --success-600: #15803D;
+  --success-100: #DCFCE7;
+
+  /* Semantic aliases — use THESE in components */
+  --color-primary:        var(--navy-800);
+  --color-primary-hover:  var(--navy-700);
+  --color-on-primary:     #FFFFFF;
+  --color-accent:         var(--orange-500);
+  --color-accent-text:    var(--orange-600);
+  --color-dark-section:   var(--navy-950);
+  --color-heading:        var(--ink);
+  --color-body:           var(--text);
+  --color-muted:          var(--muted);
+  --color-border:         var(--border);
+  --color-badge-bg:       var(--navy-800);   /* DIPLOMA badge */
+  --color-badge-text:     #FFFFFF;
+  --color-status-bg:      var(--success-100);/* Offline / Enrolling now */
+  --color-status-text:    var(--success-600);
+}
+
+/* Department tiles (Swiss poster section) — 4 tones, repeating */
+.tile--navy   { background: var(--navy-800); color: #fff; }
+.tile--orange { background: var(--orange-500); color: #fff; }
+.tile--dark   { background: var(--navy-950); color: #fff; }
+.tile--light  { background: var(--navy-100); color: var(--ink); }
+/* Order: Graphics=orange, Marketing=light, Web=dark, Cyber=navy, 3D=light, Film=dark
+   Shapes inside tiles: use orange on navy/dark/light tiles, navy-950 on orange tiles. */
