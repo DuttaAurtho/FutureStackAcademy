@@ -129,7 +129,7 @@
   function drawQR(id) {
     var box = document.getElementById('qr');
     if (typeof qrcode !== 'function') { say('QR library did not load (check your internet connection), so the QR box is empty.', 'err'); return; }
-    var q = qrcode(0, 'M'); q.addData(VERIFY + id); q.make(); document.getElementById('verify-link').href = VERIFY + id;
+    var q = qrcode(0, 'M'); q.addData(VERIFY + id); q.make();
     var n = q.getModuleCount(), quiet = 2, total = n + quiet * 2, d = '';
     for (var r = 0; r < n; r++) for (var c = 0; c < n; c++) if (q.isDark(r, c)) d += 'M' + (c + quiet) + ' ' + (r + quiet) + 'h1v1h-1z';
     box.style.border = '0';
