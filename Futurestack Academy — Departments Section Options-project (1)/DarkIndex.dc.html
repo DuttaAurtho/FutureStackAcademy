@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Departments — Dark Index</title>
+<script src="./_runtime/react.js"></script>
+<script src="./_runtime/react-dom.js"></script>
+<script src="./_runtime/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&amp;family=Instrument+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Instrument Sans',system-ui,sans-serif;background:#0C0C0D}
+a{color:inherit;text-decoration:none}a:hover{color:inherit}
+.dx-row{transition:background .25s ease,color .25s ease}
+.dx-out{-webkit-text-stroke:1.5px #F5F5F4;color:transparent}
+</style>
+</helmet>
+<section style="background: #0C0C0D; color: #F5F5F4; padding: 120px 40px; font-family: 'Instrument Sans', system-ui, sans-serif">
+<div style="max-width: 1320px; margin: 0 auto; display: flex; flex-direction: column; gap: 72px">
+
+<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 40px">
+<div style="display: flex; flex-direction: column; gap: 22px; flex: 1 1 640px">
+<span style="font-size: 13px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #FF5A66">Futurestack Academy — Departments</span>
+<h2 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-size: 108px; line-height: 0.9; font-weight: 800; letter-spacing: -0.05em">Six ways<br><span class="dx-out">into tech.</span></h2>
+</div>
+<div style="flex: 0 1 360px; display: flex; flex-direction: column; gap: 24px">
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #A8A8AE">Each department pairs expert mentors with AI-powered learning and real projects — so you leave with a portfolio, not just a certificate.</p>
+<a href="#" style="align-self: flex-start; display: inline-flex; align-items: center; gap: 12px; height: 54px; padding: 0 26px; border-radius: 999px; background: #F5F5F4; color: #0C0C0D; font-size: 15px; font-weight: 700">Browse all 37 courses<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></a>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; border-top: 1px solid #2A2A2E">
+<sc-for list="{{ rows }}" as="r" hint-placeholder-count="6">
+<a href="#" class="dx-row" onMouseEnter="{{ r.enter }}" onFocus="{{ r.enter }}" style="{{ r.rowStyle }}">
+<span style="font-size: 14px; font-weight: 600; width: 44px; flex-shrink: 0; opacity: 0.7">{{ r.num }}</span>
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 52px; line-height: 1; font-weight: 700; letter-spacing: -0.035em; flex: 1 1 420px; min-width: 0">{{ r.name }}</span>
+<span style="display: flex; flex-wrap: wrap; gap: 8px; flex: 1 1 300px">
+<sc-for list="{{ r.tags }}" as="t" hint-placeholder-count="3">
+<span style="{{ r.tagStyle }}">{{ t }}</span>
+</sc-for>
+</span>
+<span style="font-size: 15px; font-weight: 600; width: 92px; text-align: right; flex-shrink: 0">{{ r.count }}</span>
+<span style="{{ r.arrowStyle }}"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></span>
+</a>
+</sc-for>
+</div>
+
+<a href="#" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; padding: 34px 40px; border-radius: 8px; background: #0A7C46; color: #FFFFFF">
+<div style="display: flex; flex-wrap: wrap; align-items: baseline; gap: 18px">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 46px; line-height: 1; font-weight: 800; letter-spacing: -0.03em">1 Year Diploma</span>
+<span style="font-size: 16px; color: #CDEEDC">Long-term, career-focused programs</span>
+</div>
+<span style="display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 24px; border-radius: 999px; background: #0C0C0D; color: #FFFFFF; font-size: 15px; font-weight: 700">View diploma courses<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span>
+</a>
+
+</div>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1240}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { active: 2 };
+}
+renderVals() {
+const data = [
+{ name: 'Graphics & Multimedia', count: '9 courses', tags: ['Branding', 'UI/UX', 'Print', 'Illustration'] },
+{ name: 'Digital Marketing', count: '5 courses', tags: ['Social Media', 'SEO', 'Google Ads', 'Growth'] },
+{ name: 'Web & Software', count: '9 courses', tags: ['Full-stack', 'App', 'Software Engineering'] },
+{ name: 'Networking & Cyber Security', count: '5 courses', tags: ['Networks', 'Servers', 'Ethical Hacking'] },
+{ name: '3D Animation & Visualization', count: '8 courses', tags: ['3D Modeling', 'Animation', 'Archviz'] },
+{ name: 'Film & Media', count: '1 course', tags: ['Video Editing', 'Motion', 'Filmmaking'] }
+];
+const active = this.state.active;
+return {
+rows: data.map((d, i) => {
+const on = i === active;
+return {
+num: '(0' + (i + 1) + ')',
+name: d.name,
+count: d.count,
+tags: d.tags,
+enter: () => this.setState({ active: i }),
+rowStyle: { display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '24px', padding: '30px 24px', borderBottom: '1px solid #2A2A2E', background: on ? '#D7192A' : 'transparent', color: on ? '#FFFFFF' : '#F5F5F4' },
+tagStyle: { height: '30px', display: 'inline-flex', alignItems: 'center', padding: '0 12px', borderRadius: '999px', fontSize: '13px', fontWeight: 500, border: on ? '1px solid rgba(255,255,255,0.55)' : '1px solid #3A3A40', color: on ? '#FFFFFF' : '#A8A8AE' },
+arrowStyle: { width: '52px', height: '52px', borderRadius: '999px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, transition: 'transform .25s ease', boxSizing: 'border-box', background: on ? '#FFFFFF' : 'transparent', color: on ? '#D7192A' : '#F5F5F4', border: on ? '1px solid #FFFFFF' : '1px solid #3A3A40', transform: on ? 'rotate(45deg)' : 'none' }
+};
+})
+};
+}
+}
+</script>
+</body>
+</html>

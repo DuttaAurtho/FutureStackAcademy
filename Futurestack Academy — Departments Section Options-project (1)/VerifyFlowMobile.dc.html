@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Verify a certificate — mobile</title>
+<script src="./_runtime/react.js"></script>
+<script src="./_runtime/react-dom.js"></script>
+<script src="./_runtime/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Plus Jakarta Sans',system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+input,button{font-family:inherit}
+</style>
+</helmet>
+<div style="width: 390px; height: 1300px; overflow: hidden; background: #F3F6FA; color: #0F172A; font-family: 'Plus Jakarta Sans', system-ui, sans-serif">
+
+<header style="background: #FFFFFF; padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #E2E8F0">
+<span style="font-size: 19px; font-weight: 800; color: #1B2E4B">Futurestack<span style="color: #E8772E">academy</span></span>
+<button type="button" aria-label="Open menu" style="width: 44px; height: 44px; border-radius: 12px; border: 1px solid #E2E8F0; background: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1B2E4B" stroke-width="2.2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"></line><line x1="4" y1="12" x2="20" y2="12"></line><line x1="4" y1="17" x2="20" y2="17"></line></svg></button>
+</header>
+
+<section style="background: #0B1626; color: #FFFFFF; padding: 32px 20px 30px; display: flex; flex-direction: column; gap: 14px">
+<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.14em; color: #E8772E">CERTIFICATE VERIFICATION</span>
+<h1 style="margin: 0; font-size: 30px; line-height: 1.15; font-weight: 800; letter-spacing: -0.02em">Verify a Futurestack Academy certificate</h1>
+<p style="margin: 0; font-size: 15px; line-height: 1.6; color: #B4C0D3">For employers, universities and embassies. Enter the certificate ID, or scan the QR code on the certificate.</p>
+<form style="display: flex; flex-direction: column; gap: 10px; margin-top: 4px" onSubmit="{{ submit }}">
+<label for="vm-id" style="font-size: 13px; font-weight: 600; color: #C3CEDF">Certificate ID</label>
+<input id="vm-id" type="text" value="{{ q }}" onChange="{{ onInput }}" placeholder="FSA-2026-0001" autocapitalize="characters" style="height: 54px; padding: 0 16px; border: none; border-radius: 12px; font-size: 17px; color: #0F172A; box-sizing: border-box; width: 100%">
+<button type="submit" style="height: 54px; border: none; border-radius: 12px; background: #E8772E; color: #0B1626; font-size: 17px; font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>Verify certificate</button>
+</form>
+<div style="display: flex; flex-direction: column; gap: 8px; padding-top: 6px">
+<span style="font-size: 12.5px; color: #94A3B8">Try a demo ID:</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px">
+<button type="button" onClick="{{ try1 }}" style="height: 36px; padding: 0 12px; border-radius: 999px; border: 1px solid #3A4E6E; background: transparent; color: #FFFFFF; font-size: 13px; cursor: pointer">0001 · valid</button>
+<button type="button" onClick="{{ try2 }}" style="height: 36px; padding: 0 12px; border-radius: 999px; border: 1px solid #3A4E6E; background: transparent; color: #FFFFFF; font-size: 13px; cursor: pointer">0002 · revoked</button>
+<button type="button" onClick="{{ try3 }}" style="height: 36px; padding: 0 12px; border-radius: 999px; border: 1px solid #3A4E6E; background: transparent; color: #FFFFFF; font-size: 13px; cursor: pointer">not found</button>
+</div>
+</div>
+</section>
+
+<section aria-live="polite" style="padding: 18px 16px 28px">
+
+<sc-if value="{{ showIdle }}" hint-placeholder-val="{{ true }}">
+<div style="background: #FFFFFF; border: 1px dashed #CBD3DE; border-radius: 16px; padding: 28px 20px; display: flex; flex-direction: column; align-items: center; gap: 10px; text-align: center">
+<span style="width: 44px; height: 44px; border-radius: 999px; background: #E6ECF4; color: #1B2E4B; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"></path></svg></span>
+<span style="font-size: 14.5px; line-height: 1.55; color: #64748B">The result will appear here. On a phone, scanning the certificate's QR code opens this page with the result.</span>
+</div>
+</sc-if>
+
+<sc-if value="{{ showValid }}" hint-placeholder-val="{{ false }}">
+<div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 18px; overflow: hidden">
+<div style="background: #DCFCE7; padding: 16px 18px; display: flex; gap: 12px; align-items: center">
+<span style="width: 34px; height: 34px; flex-shrink: 0; border-radius: 999px; border: 2px solid #15803D; color: #15803D; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+<span style="display: flex; flex-direction: column"><b style="font-size: 18px; color: #15803D">Valid certificate</b><span style="font-size: 13.5px; color: #14532D">Issued by Futurestack Academy</span></span>
+</div>
+<div style="padding: 20px 18px 14px; display: flex; flex-direction: column; gap: 10px; border-bottom: 1px solid #EEF1F5">
+<span style="font-size: 26px; font-weight: 800; color: #1B2E4B; line-height: 1.15">[Sample Student A]</span>
+<span style="align-self: flex-start; display: inline-flex; align-items: center; height: 30px; padding: 0 12px; border-radius: 999px; background: #F3F6FA; font-size: 13px; font-weight: 700; color: #1B2E4B">ID · FSA-2026-0001</span>
+</div>
+<div style="padding: 4px 18px">
+<div style="padding: 14px 0; border-bottom: 1px solid #EEF1F5"><div style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #64748B">COURSE</div><div style="font-size: 16px; font-weight: 700; margin-top: 3px">Diploma in Full Stack AI Development</div></div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 14px">
+<div style="padding: 14px 0; border-bottom: 1px solid #EEF1F5"><div style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #64748B">DEPARTMENT</div><div style="font-size: 15px; font-weight: 700; margin-top: 3px">Web &amp; Software</div></div>
+<div style="padding: 14px 0; border-bottom: 1px solid #EEF1F5"><div style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #64748B">BATCH</div><div style="font-size: 15px; font-weight: 700; margin-top: 3px">Batch 05</div></div>
+<div style="padding: 14px 0; border-bottom: 1px solid #EEF1F5"><div style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #64748B">DURATION</div><div style="font-size: 15px; font-weight: 700; margin-top: 3px">12 months</div></div>
+<div style="padding: 14px 0; border-bottom: 1px solid #EEF1F5"><div style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #64748B">MODE</div><div style="font-size: 15px; font-weight: 700; margin-top: 3px">On campus</div></div>
+<div style="padding: 14px 0; border-bottom: 1px solid #EEF1F5"><div style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #64748B">STUDY PERIOD</div><div style="font-size: 15px; font-weight: 700; margin-top: 3px">Nov 2025 – Oct 2026</div></div>
+<div style="padding: 14px 0; border-bottom: 1px solid #EEF1F5"><div style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #64748B">RESULT</div><div style="font-size: 15px; font-weight: 700; margin-top: 3px">A</div></div>
+<div style="padding: 14px 0"><div style="font-size: 12px; font-weight: 700; letter-spacing: 0.06em; color: #64748B">ISSUE DATE</div><div style="font-size: 15px; font-weight: 700; margin-top: 3px">15 Nov 2026</div></div>
+</div>
+</div>
+<div style="margin: 4px 18px 18px; padding: 14px; border-radius: 12px; background: #F3F6FA; font-size: 13px; line-height: 1.55; color: #475569">Need written confirmation? Email <b style="color: #1B2E4B">verify@futurestackacademy.com</b> or call <b style="color: #1B2E4B">+880 1644-099435</b>.</div>
+</div>
+</sc-if>
+
+<sc-if value="{{ showRevoked }}" hint-placeholder-val="{{ false }}">
+<div style="background: #FFFFFF; border: 1px solid #F4C7C3; border-radius: 16px; padding: 20px 18px; display: flex; flex-direction: column; gap: 10px">
+<span style="display: flex; gap: 12px; align-items: center"><span style="width: 34px; height: 34px; flex-shrink: 0; border-radius: 999px; background: #B42318; color: #FFFFFF; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"></line><line x1="18" y1="6" x2="6" y2="18"></line></svg></span><b style="font-size: 18px; color: #7A271A">Certificate revoked</b></span>
+<span style="font-size: 14.5px; line-height: 1.6; color: #475569">Certificate FSA-2026-0002 was cancelled by Futurestack Academy and is no longer valid. Contact verify@futurestackacademy.com for details.</span>
+</div>
+</sc-if>
+
+<sc-if value="{{ showMissing }}" hint-placeholder-val="{{ false }}">
+<div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 16px; padding: 20px 18px; display: flex; flex-direction: column; gap: 10px">
+<span style="display: flex; gap: 12px; align-items: center"><span style="width: 34px; height: 34px; flex-shrink: 0; border-radius: 999px; background: #E6ECF4; color: #1B2E4B; display: flex; align-items: center; justify-content: center; font-weight: 800">?</span><b style="font-size: 18px; color: #1B2E4B">No certificate found</b></span>
+<span style="font-size: 14.5px; line-height: 1.6; color: #475569">Check the ID and try again. It looks like FSA-YYYY-XXXX. If it still doesn't match, contact verify@futurestackacademy.com.</span>
+</div>
+</sc-if>
+
+</section>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1300}}'>
+class Component extends DCLogic {
+constructor(props) {
+super(props);
+this.state = { q: '', result: 'idle' };
+}
+check(id) {
+const v = (id || '').trim().toUpperCase();
+let r = 'missing';
+if (v === 'FSA-2026-0001') r = 'valid';
+else if (v === 'FSA-2026-0002') r = 'revoked';
+this.setState({ q: v, result: r });
+}
+renderVals() {
+const r = this.state.result;
+return {
+q: this.state.q,
+onInput: (e) => this.setState({ q: e.target.value }),
+submit: (e) => { e.preventDefault(); this.check(this.state.q); },
+try1: () => this.check('FSA-2026-0001'),
+try2: () => this.check('FSA-2026-0002'),
+try3: () => this.check('FSA-0000'),
+showIdle: r === 'idle',
+showValid: r === 'valid',
+showRevoked: r === 'revoked',
+showMissing: r === 'missing'
+};
+}
+}
+</script>
+</body>
+</html>

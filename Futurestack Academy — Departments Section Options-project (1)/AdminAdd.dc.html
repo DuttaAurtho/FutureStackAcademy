@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Admin — Add certificate</title>
+<script src="./_runtime/react.js"></script>
+<script src="./_runtime/react-dom.js"></script>
+<script src="./_runtime/support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;font-family:'Inter Tight',system-ui,sans-serif;background:#F3F6FA}
+a{color:inherit;text-decoration:none}
+input,select{font-family:inherit}
+</style>
+</helmet>
+<div style="display: flex; flex-wrap: wrap; min-height: 900px; background: #F3F6FA; color: #0F172A; font-family: 'Inter Tight', system-ui, sans-serif">
+
+<aside style="flex: 0 1 250px; background: #0B1626; color: #C3CEDF; padding: 24px 16px; display: flex; flex-direction: column; gap: 6px; box-sizing: border-box">
+<div style="display: flex; align-items: center; gap: 10px; padding: 0 10px 22px; font-size: 18px; font-weight: 700; color: #FFFFFF">Futurestack<span style="color: #E8772E; margin-left: -10px">academy</span></div>
+<span style="padding: 0 10px 8px; font-size: 12px; font-weight: 600; letter-spacing: 0.12em; color: #7F93B2">ADMIN</span>
+<a href="#" style="padding: 11px 12px; border-radius: 8px; font-size: 15px">Dashboard</a>
+<a href="AdminList.dc.html" style="padding: 11px 12px; border-radius: 8px; font-size: 15px">Certificates</a>
+<a href="#" style="padding: 11px 12px; border-radius: 8px; font-size: 15px; background: #1B2E4B; color: #FFFFFF; font-weight: 600">+ Add certificate</a>
+<a href="#" style="padding: 11px 12px; border-radius: 8px; font-size: 15px">Students</a>
+<a href="#" style="padding: 11px 12px; border-radius: 8px; font-size: 15px">Courses</a>
+<div style="margin-top: auto; padding: 12px; border-top: 1px solid #1F2E45; font-size: 13px">Signed in as <b style="color: #FFFFFF">[Staff name]</b></div>
+</aside>
+
+<main style="flex: 999 1 600px; min-width: 0; padding: 36px 48px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+<div style="display: flex; flex-direction: column; gap: 6px">
+<span style="font-size: 13px; color: #64748B">Certificates / Add new</span>
+<h1 style="margin: 0; font-size: 30px; font-weight: 700; color: #1B2E4B">Add certificate</h1>
+<p style="margin: 0; font-size: 15px; color: #64748B">Only add students who have completed the course. The ID and QR code are created automatically when you save.</p>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start">
+<form style="flex: 2 1 560px; background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 28px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 20px">
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; color: #334155; grid-column: span 2">Student full name (as on NID / passport)<input type="text" value="Rahim Uddin" style="height: 44px; padding: 0 14px; border: 1px solid #CBD3DE; border-radius: 8px; font-size: 15px; color: #0F172A"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; color: #334155">Department<select style="height: 44px; padding: 0 12px; border: 1px solid #CBD3DE; border-radius: 8px; font-size: 15px; background: #FFFFFF"><option>Web &amp; Software</option></select></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; color: #334155">Course<select style="height: 44px; padding: 0 12px; border: 1px solid #CBD3DE; border-radius: 8px; font-size: 15px; background: #FFFFFF"><option>Diploma in Full Stack AI Development</option></select></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; color: #334155">Batch<input type="text" value="Batch 05" style="height: 44px; padding: 0 14px; border: 1px solid #CBD3DE; border-radius: 8px; font-size: 15px"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; color: #334155">Duration<input type="text" value="12 months · 126 classes" style="height: 44px; padding: 0 14px; border: 1px solid #CBD3DE; border-radius: 8px; font-size: 15px"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; color: #334155">Start date<input type="text" value="01 Nov 2025" style="height: 44px; padding: 0 14px; border: 1px solid #CBD3DE; border-radius: 8px; font-size: 15px"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; color: #334155">End date<input type="text" value="31 Oct 2026" style="height: 44px; padding: 0 14px; border: 1px solid #CBD3DE; border-radius: 8px; font-size: 15px"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; color: #334155">Result / grade<input type="text" value="A" style="height: 44px; padding: 0 14px; border: 1px solid #CBD3DE; border-radius: 8px; font-size: 15px"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 14px; font-weight: 600; color: #334155">Issue date<input type="text" value="15 Nov 2026" style="height: 44px; padding: 0 14px; border: 1px solid #CBD3DE; border-radius: 8px; font-size: 15px"></label>
+<div style="grid-column: span 2; display: flex; flex-direction: column; gap: 10px; padding: 16px; border-radius: 8px; background: #F3F6FA; font-size: 14px; color: #334155">
+<span style="font-weight: 700; color: #1B2E4B">Completion check</span>
+<label style="display: flex; gap: 10px; align-items: center"><input type="checkbox" checked="">Attendance requirement met</label>
+<label style="display: flex; gap: 10px; align-items: center"><input type="checkbox" checked="">Final project / assessment passed</label>
+<label style="display: flex; gap: 10px; align-items: center"><input type="checkbox" checked="">Fees cleared</label>
+</div>
+<div style="grid-column: span 2; display: flex; justify-content: flex-end; gap: 12px; padding-top: 6px">
+<button type="button" style="height: 46px; padding: 0 20px; border-radius: 8px; border: 1px solid #CBD3DE; background: #FFFFFF; font-family: inherit; font-size: 15px; font-weight: 600; color: #334155">Cancel</button>
+<a href="AdminList.dc.html" style="height: 46px; padding: 0 24px; border-radius: 8px; background: #1B2E4B; color: #FFFFFF; display: inline-flex; align-items: center; font-size: 15px; font-weight: 700">Save and generate certificate</a>
+</div>
+</form>
+
+<div style="flex: 1 1 300px; display: flex; flex-direction: column; gap: 16px">
+<div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-radius: 12px; padding: 22px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; font-weight: 700; letter-spacing: 0.08em; color: #64748B">AUTO-GENERATED</span>
+<div style="display: flex; justify-content: space-between; font-size: 14px"><span style="color: #64748B">Certificate ID</span><b style="color: #1B2E4B">FSA-2026-0001</b></div>
+<div style="display: flex; justify-content: space-between; font-size: 14px"><span style="color: #64748B">Verify link</span><span style="color: #C9631F">/verify?id=FSA-2026-0001</span></div>
+<div style="display: flex; align-items: center; gap: 14px; padding-top: 6px">
+<div role="img" aria-label="QR code preview" style="width: 84px; height: 84px; border: 2px solid #1B2E4B; border-radius: 6px; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 3px; padding: 6px; box-sizing: border-box">
+<span style="background: #1B2E4B"></span><span style="background: #1B2E4B"></span><span></span><span style="background: #1B2E4B"></span><span style="background: #1B2E4B"></span>
+<span style="background: #1B2E4B"></span><span></span><span style="background: #1B2E4B"></span><span></span><span style="background: #1B2E4B"></span>
+<span></span><span style="background: #1B2E4B"></span><span style="background: #1B2E4B"></span><span style="background: #1B2E4B"></span><span></span>
+<span style="background: #1B2E4B"></span><span></span><span style="background: #1B2E4B"></span><span></span><span style="background: #1B2E4B"></span>
+<span style="background: #1B2E4B"></span><span style="background: #1B2E4B"></span><span></span><span style="background: #1B2E4B"></span><span style="background: #1B2E4B"></span>
+</div>
+<span style="font-size: 13px; line-height: 1.5; color: #64748B">QR opens the student's verify page. It is printed on the certificate.</span>
+</div>
+</div>
+<div style="background: #FCEBDD; border-radius: 12px; padding: 18px; font-size: 13.5px; line-height: 1.55; color: #7A3B0F">
+<b>Public on verify page:</b> name, course, department, batch, dates, result, issue date.<br><b>Never public:</b> phone, NID, address, payments.
+</div>
+</div>
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+renderVals() {
+return {};
+}
+}
+</script>
+</body>
+</html>

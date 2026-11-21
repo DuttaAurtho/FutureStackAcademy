@@ -1,0 +1,307 @@
+{
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 1080,
+      "title": "A — Refined Grid",
+      "expand": "fill"
+    },
+    {
+      "file": "Editorial.dc.html",
+      "x": 1520,
+      "y": 0,
+      "w": 1440,
+      "h": 980,
+      "title": "B — Editorial List",
+      "expand": "fill"
+    },
+    {
+      "file": "Bento.dc.html",
+      "x": 3040,
+      "y": 0,
+      "w": 1440,
+      "h": 1080,
+      "title": "C — Featured Bento",
+      "expand": "fill"
+    },
+    {
+      "file": "Poster.dc.html",
+      "x": 0,
+      "y": 1600,
+      "w": 1440,
+      "h": 1320,
+      "title": "D — Swiss Poster Tiles",
+      "expand": "fill"
+    },
+    {
+      "file": "DarkIndex.dc.html",
+      "x": 1520,
+      "y": 1600,
+      "w": 1440,
+      "h": 1240,
+      "title": "E — Dark Index (hover rows)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "Explorer.dc.html",
+      "x": 3040,
+      "y": 1600,
+      "w": 1440,
+      "h": 1040,
+      "title": "F — Department Explorer (click tabs)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "HeroLight.dc.html",
+      "x": 0,
+      "y": 3360,
+      "w": 1440,
+      "h": 980,
+      "title": "H1 — Light Type + Poster Collage",
+      "expand": "fill"
+    },
+    {
+      "file": "HeroDark.dc.html",
+      "x": 1520,
+      "y": 3360,
+      "w": 1440,
+      "h": 1100,
+      "title": "H2 — Dark Premium + Roadmap",
+      "expand": "fill"
+    },
+    {
+      "file": "HeroSplit.dc.html",
+      "x": 3040,
+      "y": 3360,
+      "w": 1440,
+      "h": 940,
+      "title": "H3 — Split Color Block",
+      "expand": "fill"
+    },
+    {
+      "file": "HeroEditorial.dc.html",
+      "x": 0,
+      "y": 4880,
+      "w": 1440,
+      "h": 920,
+      "title": "P1 — Editorial Light",
+      "expand": "fill"
+    },
+    {
+      "file": "HeroMidnight.dc.html",
+      "x": 1520,
+      "y": 4880,
+      "w": 1440,
+      "h": 960,
+      "title": "P2 — Midnight Navy",
+      "expand": "fill"
+    },
+    {
+      "file": "HeroPhoto.dc.html",
+      "x": 3040,
+      "y": 4880,
+      "w": 1440,
+      "h": 900,
+      "title": "P3 — Photo-led Split",
+      "expand": "fill"
+    },
+    {
+      "file": "InstituteClassic.dc.html",
+      "x": 0,
+      "y": 6260,
+      "w": 1440,
+      "h": 1060,
+      "title": "I1 — IT Institute Classic",
+      "expand": "fill"
+    },
+    {
+      "file": "InstituteVerify.dc.html",
+      "x": 1520,
+      "y": 6260,
+      "w": 1440,
+      "h": 1000,
+      "title": "I2 — Institute + Certificate Verify",
+      "expand": "fill"
+    },
+    {
+      "file": "UnifiedHero.dc.html",
+      "x": 0,
+      "y": 7740,
+      "w": 1440,
+      "h": 860,
+      "title": "U1 — Hero (unified colors)",
+      "expand": "fill"
+    },
+    {
+      "file": "UnifiedDepartments.dc.html",
+      "x": 1520,
+      "y": 7740,
+      "w": 1440,
+      "h": 1320,
+      "title": "U2 — Departments (unified colors)",
+      "expand": "fill"
+    },
+    {
+      "file": "UnifiedCourses.dc.html",
+      "x": 3040,
+      "y": 7740,
+      "w": 1440,
+      "h": 1080,
+      "title": "U3 — Courses (unified colors)",
+      "expand": "fill"
+    },
+    {
+      "file": "Certificate.dc.html",
+      "x": 0,
+      "y": 9500,
+      "w": 1123,
+      "h": 794,
+      "title": "Certificate of Completion (A4 landscape)",
+      "paper": "a4"
+    },
+    {
+      "file": "AdminAdd.dc.html",
+      "x": 0,
+      "y": 10920,
+      "w": 1440,
+      "h": 900,
+      "title": "Step 1 — Staff adds a certificate (Admin)",
+      "expand": "fill"
+    },
+    {
+      "file": "AdminList.dc.html",
+      "x": 1520,
+      "y": 10920,
+      "w": 1440,
+      "h": 900,
+      "title": "Step 2 — Certificate list, PDF + QR (Admin)",
+      "expand": "fill"
+    },
+    {
+      "file": "VerifyFlow.dc.html",
+      "x": 3040,
+      "y": 10920,
+      "w": 1440,
+      "h": 900,
+      "title": "Step 3 — Public verify page (try it)",
+      "expand": "fill",
+      "is_interactive": true
+    },
+    {
+      "file": "VerifyPhotoMobile.dc.html",
+      "x": 5080,
+      "y": 10920,
+      "w": 390,
+      "h": 1040,
+      "title": "Verify result (mobile)"
+    },
+    {
+      "file": "VerifyPhotoDesktop.dc.html",
+      "x": 5550,
+      "y": 10920,
+      "w": 1440,
+      "h": 820,
+      "title": "Verify result (desktop)",
+      "expand": "fill"
+    },
+    {
+      "file": "VerifyFlowMobile.dc.html",
+      "x": 7070,
+      "y": 10920,
+      "w": 390,
+      "h": 1300,
+      "title": "Public verify page — mobile (try it)",
+      "is_interactive": true
+    }
+  ],
+  "annotations": [
+    {
+      "id": "t",
+      "x": 0,
+      "y": -300,
+      "w": 240,
+      "maxW": 4480,
+      "text": "Departments section — 3 directions",
+      "kind": "title1"
+    },
+    {
+      "id": "t2",
+      "x": 0,
+      "y": 1300,
+      "w": 240,
+      "maxW": 4480,
+      "text": "Round 2 — bolder, eye-catching",
+      "kind": "title1"
+    },
+    {
+      "id": "t3",
+      "x": 0,
+      "y": 3060,
+      "w": 240,
+      "maxW": 4480,
+      "text": "Hero section — 3 directions",
+      "kind": "title1"
+    },
+    {
+      "id": "t4",
+      "x": 0,
+      "y": 4580,
+      "w": 240,
+      "maxW": 4480,
+      "text": "Hero — classy & premium (monochrome)",
+      "kind": "title1"
+    },
+    {
+      "id": "t5",
+      "x": 0,
+      "y": 5960,
+      "w": 240,
+      "maxW": 2960,
+      "text": "Hero — IT institute look",
+      "kind": "title1"
+    },
+    {
+      "id": "t6",
+      "x": 0,
+      "y": 7440,
+      "w": 240,
+      "maxW": 4480,
+      "text": "Your 3 sections — unified navy + orange",
+      "kind": "title1"
+    },
+    {
+      "id": "t7",
+      "x": 0,
+      "y": 9200,
+      "w": 240,
+      "maxW": 1123,
+      "text": "Certificate",
+      "kind": "title1"
+    },
+    {
+      "id": "t8",
+      "x": 0,
+      "y": 10620,
+      "w": 240,
+      "maxW": 4480,
+      "text": "Certificate verification — full process",
+      "kind": "title1"
+    },
+    {
+      "id": "s1",
+      "x": 4560,
+      "y": 10920,
+      "w": 440,
+      "text": "FULL PROCESS\n\n1. Student finishes course (attendance + final project checked).\n\n2. Staff opens Admin → Add certificate → fills details → Save. System creates ID (FSA-2026-0001) + QR.\n\n3. Admin list → Download PDF → print, sign, stamp → give to student with completion letter + transcript.\n\n4. Embassy scans QR or types ID at futurestackacademy.com/verify → sees Valid + details.\n\n5. If a certificate is wrong or cancelled → Admin marks it Revoked → verify page shows Revoked.",
+      "fill": "blue"
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  }
+}
